@@ -5,8 +5,8 @@
 ### Installer le projet
 
 ```console
-git clone https://github.com/LAB-MI/attestation-deplacement-derogatoire-q4-2020.git
-cd attestation-deplacement-derogatoire-q4-2020
+git clone https://github.com/LAB-MI/attestation-deplacement-derogatoire-covid-19.git
+cd attestation-deplacement-derogatoire-covid-19
 npm i
 npm start
 ```

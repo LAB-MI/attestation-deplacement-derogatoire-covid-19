@@ -98,44 +98,62 @@
       "autocomplete": ""
     },
     {
-      "key": "reason",
+      "key": "reason-curfew",
       "type": "list",
       "items": [
         {
           "code": "travail",
-          "label": "Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle ou un établissement d’enseignement ou de formation ; déplacements professionnels ne pouvant être différés <a class=\"footnote\" href=\"#footnote2\">[2]</a> ; déplacements pour un concours ou un examen ;"
-        },
-        {
-          "code": "achats_culturel_cultuel",
-          "label": "Déplacements pour se rendre dans un établissement culturel autorisé ou un lieu de culte ; déplacements pour effectuer des achats de biens, pour des services dont la fourniture est autorisée, pour les retraits de commandes et les livraisons à domicile ;"
+          "label": "<strong> 1. Activité professionnelle enseignement et formation </strong> <br> Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle ou le lieu d’enseignement et de formation, déplacements professionnels ne pouvant être différés ;"
         },
         {
           "code": "sante",
-          "label": "Consultations, examens et soins ne pouvant être assurés à distance et l’achat de médicaments ;"
+          "label": "<strong> 2. Consultation et soins</strong> <br> Déplacements pour des consultations, examens, actes de prévention (dont vaccination) et soins ne pouvant être assurés à distance ou pour l’achat de produits de santé ;"
         },
         {
           "code": "famille",
-          "label": "Déplacements pour motif familial impérieux, pour l'assistance aux personnes vulnérables et précaires ou la garde d'enfants ;"
+          "label": "<strong>  3. Motif familial impérieux, personnes vulnérables ou précaires ou gardes d’enfants </strong> <br> Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou précaires ou pour la garde d’enfants ;"
         },
         {
           "code": "handicap",
-          "label": "Déplacements des personnes en situation de handicap et leur accompagnant ;"
+          "label": "<strong> 4. Situation de handicap </strong> <br> Déplacements des personnes en situation de handicap et de leur accompagnant ;"
         },
         {
-          "code": "sport_animaux",
-          "label": "Déplacements en plein air ou vers un lieu de plein air, sans changement du lieu de résidence, dans la limite de trois heures quotidiennes et dans un rayon maximal de vingt kilomètres autour du domicile, liés soit à l’activité physique ou aux loisirs individuels, à l’exclusion de toute pratique sportive collective et de toute proximité avec d’autres personnes, soit à la promenade avec les seules personnes regroupées dans un même domicile, soit aux besoins des animaux de compagnie ;"
-        },
-        {
-          "code": "convocation",
-          "label": "Convocations judiciaires ou administratives et déplacements pour se rendre dans un service public ;"
+          "code": "judiciaire",
+          "label": "<strong> 5. Convocation judiciaire ou administrative </strong> <br> Déplacements pour répondre à une convocation judiciaire ou administrative. ;"
         },
         {
           "code": "missions",
-          "label": "Participation à des missions d'intérêt général sur demande de l'autorité administrative ;"
+          "label": "<strong> 6. Mission d’intérêt général </strong> <br> Déplacements pour participer à des missions d’intérêt général sur demande de l’autorité administrative ;"
         },
         {
-          "code": "enfants",
-          "label": "Déplacements pour chercher les enfants à l’école et à l’occasion de leurs activités périscolaires."
+          "code": "transit",
+          "label": " <strong> 7. Déplacements de transit et longue distance </strong> <br> Déplacements liés à des transits ferroviaires, aériens ou en bus pour des déplacements de longues distances ;"
+        },
+        {
+          "code": "animaux",
+          "label": "<strong> 8. Animaux de compagnie </strong> <br>Déplacements brefs autour du domicile pour les besoins des animaux de compagnie <a class=\"footnote\" href=\"#footnote2\">[2]</a> ;"
+        },
+      ]
+    },
+    {
+      "key": "reason-quarantine",
+      "type": "list",
+      "items": [
+        {
+          "code": "courses",
+          "label": " <strong> 9. Achats </strong> <br> Déplacements pour effectuer des achats de fournitures nécessaires à l'activité professionnelle, des achats de première nécessité, des retraits de commandes, des livraisons à domicile, ainsi que pour les déménagements ;"
+        },
+        {
+          "code": "sport",
+          "label": "<strong> 10. Activités physiques  </strong> <br> Déplacements brefs, dans la limite d'une heure quotidienne et dans un rayon maximal de cinq kilomètres autour du domicile, liés soit à l'activité physique individuelle des personnes, à l'exclusion de toute pratique sportive collective et de toute proximité avec d'autres personnes, soit à la promenade avec les seules personnes regroupées dans un même domicile <a class=\"footnote\" href=\"#footnote3\">[3]</a> ;"
+        },
+        {
+          "code": "rassemblement",
+          "label": "<strong> 11. Participation à des rassemblements autorisés </strong> <br> Déplacements à destination ou en provenance d'un lieu de culte, participation à des rassemblements, réunions ou activités sur la voie publique ou dans un lieu ouvert au public qui ne sont pas interdits en application de l'article 3 ;"
+        },
+        {
+          "code": "demarche",
+          "label": "<strong> 12. Démarches administratives ou juridiques </strong> <br> Déplacements pour se rendre dans un service public ou chez un professionnel du droit, pour un acte ou une démarche qui ne peuvent être réalisés à distance."
         }
       ]
     }

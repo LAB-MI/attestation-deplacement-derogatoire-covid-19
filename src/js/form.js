@@ -105,24 +105,49 @@ const createReasonFieldset = (reasonsData) => {
   const fieldset = createElement('fieldset', fieldsetAttrs)
   const appendToFieldset = appendTo(fieldset)
 
+  const textSubscribeReasonAttrs = {
+    innerHTML: 'certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
+  }
+  const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)
+
   const legendAttrs = {
     className: 'legend titre-3',
     innerHTML: 'Choisissez un motif de déplacement',
   }
-  const legend = createElement('legend', legendAttrs)
+  const legend = createElement('p', legendAttrs)
 
   const textAlertAttrs = { className: 'msg-alert hidden', innerHTML: 'Veuillez choisir un motif' }
   const textAlert = createElement('p', textAlertAttrs)
 
-  const textSubscribeReasonAttrs = {
-    innerHTML: 'certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
+  const reasonsFields = reasonsData.items.map(createReasonField)
+
+  appendToFieldset([textSubscribeReason, legend, textAlert, ...reasonsFields])
+  // Créer un form-checkbox par motif
+  return fieldset
+}
+
+const createReasonFieldsetQuarantine = (reasonsData) => {
+  const fieldsetAttrs = {
+    id: 'reason-fieldset',
+    className: 'fieldset',
   }
 
-  const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)
+  const fieldset = createElement('fieldset', fieldsetAttrs)
+  const appendToFieldset = appendTo(fieldset)
+
+  const textQuarantineAttrs = {
+    className: 'legend titre-3',
+    innerHTML: 'Motifs supplémentaires applicables uniquement de 6h à 18h dans les territoires soumis a un confinement le week-end',
+  }
+
+  const textQuarantine = createElement('p', textQuarantineAttrs)
+
+  const textAlertAttrs = { className: 'msg-alert hidden', innerHTML: 'Veuillez choisir un motif' }
+  const textAlert = createElement('p', textAlertAttrs)
 
   const reasonsFields = reasonsData.items.map(createReasonField)
 
-  appendToFieldset([legend, textAlert, textSubscribeReason, ...reasonsFields])
+  appendToFieldset([textQuarantine, textAlert, ...reasonsFields])
   // Créer un form-checkbox par motif
   return fieldset
 }
@@ -138,7 +163,8 @@ export function createForm () {
 
   const formFirstPart = formData
     .flat(1)
-    .filter(field => field.key !== 'reason')
+    .filter(field => field.key !== 'reason-curfew')
+    .filter(field => field.key !== 'reason-quarantine')
     .filter(field => !field.isHidden)
     .map((field,
       index) => {
@@ -151,10 +177,15 @@ export function createForm () {
       return formGroup
     })
 
-  const reasonsData = formData
+  const reasonsDataCurfew = formData
     .flat(1)
-    .find(field => field.key === 'reason')
+    .find(field => field.key === 'reason-curfew')
 
-  const reasonFieldset = createReasonFieldset(reasonsData)
-  appendToForm([...createTitle(), ...formFirstPart, reasonFieldset])
+  const reasonsDataQuarantine = formData
+    .flat(1)
+    .find(field => field.key === 'reason-quarantine')
+
+  const reasonFieldset = createReasonFieldset(reasonsDataCurfew)
+  const reasonFieldsetQuarantine = createReasonFieldsetQuarantine(reasonsDataQuarantine)
+  appendToForm([...createTitle(), ...formFirstPart, reasonFieldset, reasonFieldsetQuarantine])
 }

@@ -330,6 +330,9 @@ input[type=number] {
   font-style :italic;
   font-size: 0.8em;
 }
+.text-bold {
+  font-weight: bold;
+}
 
 @media (prefers-color-scheme: dark) {
   .covid-subtitle {
@@ -544,6 +547,7 @@ input[type=number] {
   color: #000000;
 }
 
+
 @media (prefers-color-scheme: dark) {
     .titre-3 {
         color: white;
@@ -552,7 +556,8 @@ input[type=number] {
     .titre-4 {
         color: white;
     }
-}
+    
+    }
 
 @media (prefers-color-scheme: dark) {
   .titre-2 {

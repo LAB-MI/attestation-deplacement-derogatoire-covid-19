@@ -1,17 +1,17 @@
 {
   "name": "attestation-derogatoire-de-deplacement",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "Générateur d'attestation de déplacement dérogatoire'",
   "main": "certificate.js",
   "scripts": {
     "lint": "eslint src/**/*.js",
     "preformat": "prettier --write \"src/**/*.js\"",
     "format": "npm run lint -- --fix",
-    "start": "cross-env VERSION=localversion parcel ./src/index.html",
-    "start:grid": "cross-env VERSION=localversion parcel ./src/grid.html",
+    "start": "cross-env VERSION=${VERSION:-localversion} parcel ./src/index.html",
+    "start:grid": "cross-env VERSION=${VERSION:-localversion} parcel ./src/grid.html",
     "clean:dist": "rimraf dist",
     "prebuild": "run-p lint clean:dist",
-    "build:simple": "cross-env-shell VERSION=$npm_package_version parcel build --public-url $PUBLIC_URL ./src/index.html ./src/robots.txt ./src/sitemap.xml",
+    "build:simple": "cross-env-shell VERSION=$npm_package_version parcel build --public-url '$PUBLIC_URL' ./src/index.html ./src/robots.txt ./src/sitemap.xml",
     "build": "cross-env npm run build:simple",
     "postbuild": "cross-env-shell react-snap",
     "prebuild:ci": "run-p lint clean:dist",
@@ -24,13 +24,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lab-mi/attestation-deplacement-derogatoire-q4-2020"
+    "url": "git+https://github.com/lab-mi/attestation-deplacement-derogatoire-covid-19"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lab-mi/attestation-deplacement-derogatoire-q4-2020/issues"
+    "url": "https://github.com/lab-mi/attestation-deplacement-derogatoire-covid-19/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

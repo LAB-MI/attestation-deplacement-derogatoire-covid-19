@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.0]
+
+- Reconstruction du formulaire
+- Modification du pdf
+- Repositionnement des textes ajoutés
 ## [1.1.0]
 
 - Modification du pdf (certificate.pdf)
