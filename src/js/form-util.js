@@ -133,7 +133,7 @@ export function getReasons (reasonInputs) {
   return reasons
 }
 
-export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonAlert, snackbar, releaseDateInput) {
+export function prepareInputs (formInputs, reasonInputs, reasonFieldsetsWrapper, reasonAlerts, snackbar, releaseDateInput, contextWrapper) {
   const lsProfile = secureLS.get('profile')
 
   // Continue to store data if already stored
@@ -167,8 +167,8 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
   reasonInputs.forEach(radioInput => {
     radioInput.addEventListener('change', function (event) {
       const isInError = reasonInputs.every(input => !input.checked)
-      reasonFieldset.classList.toggle('fieldset-error', isInError)
-      reasonAlert.classList.toggle('hidden', !isInError)
+      reasonFieldsetsWrapper.classList.toggle('fieldset-error', isInError)
+      reasonAlerts.map(reasonAlert => reasonAlert.classList.toggle('hidden', !isInError))
     })
   })
   $('#cleardata').addEventListener('click', () => {
@@ -183,11 +183,15 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
   $('#generate-btn').addEventListener('click', async (event) => {
     event.preventDefault()
 
+    if ($$('.targeted').length === 0) {
+      contextWrapper.classList.add('context-wrapper-error')
+    }
+
     const reasons = getReasons(reasonInputs)
     if (!reasons) {
-      reasonFieldset.classList.add('fieldset-error')
-      reasonAlert.classList.remove('hidden')
-      reasonFieldset.scrollIntoView && reasonFieldset.scrollIntoView()
+      reasonFieldsetsWrapper.classList.add('fieldset-error')
+      reasonAlerts.map(reasonAlert => reasonAlert.classList.remove('hidden'))
+      // reasonFieldsetsWrapper.scrollIntoView && reasonFieldsetsWrapper.scrollIntoView()
       return
     }
 
@@ -207,15 +211,39 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     downloadBlob(pdfBlob, `attestation-${creationDate}_${creationHour}.pdf`)
     showSnackbar(snackbar, 6000)
   })
+
+  const curfewFieldset = $('#curfew-reason-fieldset')
+  const quarantineFieldset = $('#quarantine-reason-fieldset')
+  const curfewSubtitle = $('.curfew-subtitle')
+  const quarantineSubtitle = $('.quarantine-subtitle')
+  $$('.context-button').map(anchor => anchor.addEventListener('click', (event) => {
+    contextWrapper.classList.remove('context-wrapper-error')
+    reasonFieldsetsWrapper.classList.toggle('hidden', false)
+    if (event.target.className.includes('curfew-button')) {
+      curfewFieldset.classList.toggle('in-quarantine', false)
+      curfewFieldset.classList.toggle('targeted', true)
+      quarantineFieldset.classList.toggle('targeted', false)
+      curfewSubtitle.classList.toggle('hidden', false)
+      quarantineSubtitle.classList.toggle('hidden', true)
+    }
+    if (event.target.className.includes('quarantine-button')) {
+      curfewFieldset.classList.toggle('in-quarantine', true)
+      curfewFieldset.classList.toggle('targeted', true)
+      quarantineFieldset.classList.toggle('targeted', true)
+      curfewSubtitle.classList.toggle('hidden', true)
+      quarantineSubtitle.classList.toggle('hidden', false)
+    }
+  }))
 }
 
 export function prepareForm () {
   const formInputs = $$('#form-profile input')
   const snackbar = $('#snackbar')
   const reasonInputs = [...$$('input[name="field-reason"]')]
-  const reasonFieldset = $('#reason-fieldset')
-  const reasonAlert = reasonFieldset.querySelector('.msg-alert')
+  const reasonFieldsetsWrapper = $('.fieldset-wrapper')
+  const reasonAlerts = $$('.msg-alert')
   const releaseDateInput = $('#field-datesortie')
+  const contextWrapper = $('.context-wrapper')
   setReleaseDateTime(releaseDateInput)
-  prepareInputs(formInputs, reasonInputs, reasonFieldset, reasonAlert, snackbar, releaseDateInput)
+  prepareInputs(formInputs, reasonInputs, reasonFieldsetsWrapper, reasonAlerts, snackbar, releaseDateInput, contextWrapper)
 }

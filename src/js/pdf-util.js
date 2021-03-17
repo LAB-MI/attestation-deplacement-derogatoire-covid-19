@@ -6,14 +6,14 @@ const ys = {
   sante: 546,
   famille: 512,
   handicap: 478,
-  judiciaire: 459,
-  missions: 438,
-  transit: 404,
-  animaux: 370,
-  courses: 304,
-  sport: 261,
-  rassemblement: 190,
-  demarche: 145,
+  judiciaire: 460,
+  missions: 410,
+  transit: 378,
+  animaux: 343,
+  courses: 280,
+  sport: 235,
+  rassemblement: 167,
+  demarche: 121,
 }
 
 export async function generatePdf (profile, reasons, pdfBase) {
@@ -94,9 +94,9 @@ export async function generatePdf (profile, reasons, pdfBase) {
     locationSize = 7
   }
 
-  drawText(profile.city, 103, 112, locationSize)
-  drawText(`${profile.datesortie}`, 91, 95, 11)
-  drawText(`${profile.heuresortie}`, 310, 95, 11)
+  drawText(profile.city, 103, 99, locationSize)
+  drawText(`${profile.datesortie}`, 91, 83, 11)
+  drawText(`${profile.heuresortie}`, 310, 83, 11)
 
   // const shortCreationDate = `${creationDate.split('/')[0]}/${
   //   creationDate.split('/')[1]

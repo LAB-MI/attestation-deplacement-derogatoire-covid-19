@@ -39,6 +39,8 @@ Les projets open source suivants ont été utilisés pour le développement de c
 service :
 
 - [PDF-LIB](https://pdf-lib.js.org/)
+- [remove-accents](https://github.com/tyxla/remove-accents)
+- [secure-ls](https://github.com/softvar/secure-ls)
 - [qrcode](https://github.com/soldair/node-qrcode)
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/license)

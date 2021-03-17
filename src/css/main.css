@@ -129,6 +129,34 @@ a {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  a.curfew-button {
+    color: white;
+    background-color: #43436B;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #curfew-reason-fieldset.targeted {
+    color: white;
+    background-color: #43436B;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #curfew-reason-fieldset.targeted.in-quarantine {
+    color: white;
+    background-color: #6B0B0B;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #quarantine-reason-fieldset.targeted {
+    color: white;
+    background-color: #6B0B0B;
+  }
+}
+
 p {
   color: black;
 }
@@ -664,10 +692,10 @@ input[type=number] {
 }
 
 .fieldset {
-  margin-left: -1.25em;
-  margin-right: -1.25em;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border: 3px solid transparent;
 }
 
@@ -677,4 +705,90 @@ input[type=number] {
 
 .fieldset-error {
   border: 3px solid red;
+}
+
+.sanitary-context ~ * {
+  display: none
+}
+
+.sanitary-context ~ label {
+  display: block
+} 
+
+.sanitary-context:checked ~ * {
+  display: block;
+}
+
+#curfew-reason-fieldset {
+  display: none;
+  background: #DDF;
+}
+#curfew-reason-fieldset.targeted,
+#quarantine-reason-fieldset.targeted  {
+  display: block;
+}
+#quarantine-reason-fieldset {
+  display: none;
+  background: #FEE;
+}
+
+.curfew-button {
+  display: block;
+  width: 40%;
+  text-decoration: none;
+  background: #DDF;
+}
+
+.quarantine-button {
+  display: block;
+  width: 40%;
+  text-decoration: none;
+  background: #FEE;
+}
+
+#formgroup-storedata {
+  clear: both;
+  padding-top: 2rem !important;
+}
+
+.context-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.context-subtitle {
+  font-size: 0.8rem;
+}
+
+.context-wrapper-error {
+  border: 1px solid red;
+  padding: 1%;
+}
+
+.context-wrapper-error .context-title {
+  color: red;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#curfew-reason-fieldset.in-quarantine {
+  background: #FEE;
+}
+
+#curfew-reason-fieldset.targeted {
+  display: block;
+}
+
+.fieldset-wrapper.fieldset-error {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.quarantine-subtitle,
+.curfew-subtitle {
+  padding: 1rem 0;
 }
