@@ -22,7 +22,7 @@
 
 - Modification du pdf (certificate.pdf)
 - Repositionnement des textes ajoutés
-- Accessibilité : ajout d'un texte (en blanouton pour choisir le contextec) pour indiquer aux lecteurs de pdf audio la présence d'un QR-code dans le document généré
+- Accessibilité : ajout d'un texte (en blanc) pour indiquer aux lecteurs de pdf audio la présence d'un QR-code dans le document généré
 
 ## [1.1.1]
 
