@@ -101,6 +101,13 @@ export function setReleaseDateTime (releaseDateInput) {
   releaseDateInput.value = getFormattedDate(loadedDate)
 }
 
+export function setReleaseHour (releaseHour) {
+  const loadedDate = new Date()
+  let hours = loadedDate.getHours();
+  hours = ("0" + hours).slice(-2);
+  releaseHour.value = `${hours}:${loadedDate.getMinutes()}`
+}
+
 export function toAscii (string) {
   if (typeof string !== 'string') {
     throw new Error('Need string')
@@ -227,8 +234,8 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldsetsWrapper,
       quarantineSubtitle.classList.toggle('hidden', true)
     }
     if (event.target.className.includes('quarantine-button')) {
-      curfewFieldset.classList.toggle('in-quarantine', true)
-      curfewFieldset.classList.toggle('targeted', true)
+      curfewFieldset.classList.toggle('in-quarantine', false)
+      curfewFieldset.classList.toggle('targeted', false)
       quarantineFieldset.classList.toggle('targeted', true)
       curfewSubtitle.classList.toggle('hidden', true)
       quarantineSubtitle.classList.toggle('hidden', false)
@@ -243,7 +250,9 @@ export function prepareForm () {
   const reasonFieldsetsWrapper = $('.fieldset-wrapper')
   const reasonAlerts = $$('.msg-alert')
   const releaseDateInput = $('#field-datesortie')
+  const releaseHour = $('#field-heuresortie')
   const contextWrapper = $('.context-wrapper')
   setReleaseDateTime(releaseDateInput)
+  setReleaseHour(releaseHour)
   prepareInputs(formInputs, reasonInputs, reasonFieldsetsWrapper, reasonAlerts, snackbar, releaseDateInput, contextWrapper)
 }

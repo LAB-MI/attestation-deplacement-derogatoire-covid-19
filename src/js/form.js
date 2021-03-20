@@ -95,9 +95,9 @@ const createReasonField = (reasonData) => {
   return formReason
 }
 
-const createReasonFieldset = (reasonsData, sanitaryContextData) => {
+const createReasonFieldset = (reasonsData, id) => {
   const fieldsetAttrs = {
-    id: 'curfew-reason-fieldset',
+    id: id,
     className: 'fieldset  reason-fieldset',
   }
 
@@ -105,7 +105,7 @@ const createReasonFieldset = (reasonsData, sanitaryContextData) => {
   const appendToFieldset = appendTo(fieldset)
 
   const textSubscribeReasonAttrs = {
-    innerHTML: 'Je certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
+    innerHTML: 'Je certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé en application des mesures générales nécessaires pour faire face à l\'épidémie de COVID-19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
   }
   const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)
 
@@ -121,22 +121,6 @@ const createReasonFieldset = (reasonsData, sanitaryContextData) => {
   const reasonsFields = reasonsData.items.map(createReasonField)
 
   appendToFieldset([textSubscribeReason, legend, textAlert, ...reasonsFields])
-  // Créer un form-checkbox par motif
-  return fieldset
-}
-
-const createReasonFieldsetQuarantine = (reasonsData) => {
-  const fieldsetAttrs = {
-    id: 'quarantine-reason-fieldset',
-    className: 'fieldset  reason-fieldset',
-  }
-
-  const fieldset = createElement('fieldset', fieldsetAttrs)
-  const appendToFieldset = appendTo(fieldset)
-
-  const reasonsFields = reasonsData.items.map(createReasonField)
-
-  appendToFieldset([...reasonsFields])
   // Créer un form-checkbox par motif
   return fieldset
 }
@@ -174,13 +158,13 @@ export function createForm () {
     .flat(1)
     .find(field => field.key === 'reason-quarantine')
 
-  const reasonFieldsetCurfew = createReasonFieldset(reasonsDataCurfew)
-  const reasonFieldsetQuarantine = createReasonFieldsetQuarantine(reasonsDataQuarantine)
+  const reasonFieldsetCurfew = createReasonFieldset(reasonsDataCurfew, 'curfew-reason-fieldset')
+  const reasonFieldsetQuarantine = createReasonFieldset(reasonsDataQuarantine, 'quarantine-reason-fieldset')
   const curfewButton = createElement('button', { type: 'button', className: 'curfew-button  context-button  btn' })
-  const curfewLink = document.createTextNode('Couvre-feu  (18h-6h)')
+  const curfewLink = document.createTextNode('Couvre-feu  (19h-6h)')
   curfewButton.appendChild(curfewLink)
   const quarantineButton = createElement('button', { type: 'button', className: 'quarantine-button  context-button  btn' })
-  const quarantineLink = document.createTextNode('Week-end * (6h-18h)')
+  const quarantineLink = document.createTextNode('Journée * (6h-19h)')
   quarantineButton.appendChild(quarantineLink)
   const buttonWrapper = createElement('div', { className: 'button-wrapper' })
   buttonWrapper.appendChild(curfewButton)
@@ -189,7 +173,7 @@ export function createForm () {
   const contextTitleText = document.createTextNode('Choisissez un contexte')
   contextTitle.appendChild(contextTitleText)
   const contextSubtitle = createElement('p', { className: 'context-subtitle' })
-  const contextSubtitleText = document.createTextNode('* Le contexte "Week-end (6h-18h)" ne s\'applique qu\'aux territoires concernés par des dispositions spécifiques')
+  const contextSubtitleText = document.createTextNode('* Le contexte "Journée (6h-19h)" ne s\'applique qu\'aux territoires concernés par des dispositions spécifiques')
   contextSubtitle.appendChild(contextSubtitleText)
   const contextWrapper = createElement('div', { className: 'context-wrapper' })
   contextWrapper.appendChild(contextTitle)
@@ -198,12 +182,12 @@ export function createForm () {
   const reasonFielsetWrapper = createElement('div', { className: 'fieldset-wrapper  hidden' })
 
   const quarantineSubtitle = createElement('div', { className: 'quarantine-subtitle  hidden' })
-  const quarantineSubtitleText = document.createTextNode('J\'effectue un déplacement le week-end entre 06h00 et 18h00 sur un territoire soumis au confinement')
+  const quarantineSubtitleText = document.createTextNode('J\'effectue un déplacement la journée entre 06h00 et 19h00 sur un territoire soumis au confinement')
   quarantineSubtitle.appendChild(quarantineSubtitleText)
   const curfewSubtitle = createElement('div', { className: 'curfew-subtitle  hidden' })
-  const curfewSubtitleText = document.createTextNode('J\'effectue un déplacement entre 18h00 et 06h00 sur un territoire soumis au couvre-feu.')
+  const curfewSubtitleText = document.createTextNode('J\'effectue un déplacement entre 19h00 et 06h00 sur un territoire soumis au couvre-feu.')
   curfewSubtitle.appendChild(curfewSubtitleText)
-  reasonFieldsetCurfew.prepend(quarantineSubtitle)
+  reasonFieldsetQuarantine.prepend(quarantineSubtitle)
   reasonFieldsetCurfew.prepend(curfewSubtitle)
   reasonFielsetWrapper.appendChild(reasonFieldsetCurfew)
   reasonFielsetWrapper.appendChild(reasonFieldsetQuarantine)

@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  node:
+    image: node:lts-alpine
+    container_name: attestation-covid
+    working_dir: /var/www
+    command:
+      - /bin/sh
+      - '-c'
+      - 'npm start'
+    volumes:
+      - ./:/var/www
+    ports:
+      - '5000:5000'
+      - '3000:3000'
