@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+    attestation-covid:
+        image: attestation-covid:latest
+        container_name: attestation-covid
+        ports:
+            - '8083:5000'

@@ -31,6 +31,26 @@ Et visiter http://localhost:5000
 
 Le code à déployer sera le contenu du dossier `dist`
 
+## Docker Installation
+
+#### Build de l'image
+
+```console
+git clone https://github.com/LAB-MI/attestation-deplacement-derogatoire-covid-19.git
+cd attestation-deplacement-derogatoire-covid-19
+docker build -t attestation-covid .
+```
+#### Démarrage du container via docker
+
+``` console
+docker run --name attestation-covid -p 5000:5000 attestation-covid:latest
+```
+#### Démarrage du container via docker-compose
+
+``` console
+docker-compose up -d
+```
+
 ## Crédits
 
 Ce projet a été réalisé à partir d'un fork du dépôt [deplacement-covid-19](https://github.com/nesk/deplacement-covid-19) de lui-même réalisé à partir d'un fork du dépôt [covid-19-certificate](https://github.com/nesk/covid-19-certificate) de [Johann Pardanaud](https://github.com/nesk).
