@@ -105,7 +105,7 @@ const createReasonFieldset = (reasonsData, sanitaryContextData) => {
   const appendToFieldset = appendTo(fieldset)
 
   const textSubscribeReasonAttrs = {
-    innerHTML: 'certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé en application des mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
+    innerHTML: 'certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé en application des mesures générales nécessaires pour faire face à l\'épidémie de COVID-19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
   }
   const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)
 
