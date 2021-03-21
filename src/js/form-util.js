@@ -2,7 +2,8 @@ import removeAccents from 'remove-accents'
 
 import { $, $$, downloadBlob } from './dom-utils'
 import { addSlash, getFormattedDate } from './util'
-import pdfBase from '../certificate.pdf'
+import quarantinePdfBase from '../certificate-quarantine.pdf'
+import curfewPdfBase from '../certificate-curfew.pdf'
 import { generatePdf } from './pdf-util'
 import SecureLS from 'secure-ls'
 
@@ -207,7 +208,10 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldsetsWrapper,
       return
     }
     updateSecureLS(formInputs)
-    const pdfBlob = await generatePdf(getProfile(formInputs), reasons, pdfBase)
+
+    const pdfType = $('#curfew-reason-fieldset').classList.contains('targeted') ? 'curfew' : 'quarantine';
+    const pdfBase = 'curfew' === pdfType ? curfewPdfBase : quarantinePdfBase;
+    const pdfBlob = await generatePdf(getProfile(formInputs), reasons, pdfBase, pdfType)
 
     const creationInstant = new Date()
     const creationDate = creationInstant.toLocaleDateString('fr-CA')

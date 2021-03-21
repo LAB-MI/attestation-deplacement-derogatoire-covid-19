@@ -1,22 +1,55 @@
 import { generateQR } from './util'
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib'
 
-const ys = {
-  sport: {y: 381, page: 1},
-  courses: {y: 269, page: 1},
-  famille: {y: 214, page: 1},
-  culte: {y: 160, page: 1},
-  demarche: {y: 760, page: 2},
-  travail: {y: 662, page: 2},
-  sante: {y: 564, page: 2},
-  imperieux: {y: 511, page: 2},
-  handicap: {y: 457, page: 2},
-  judiciaire: {y: 415, page: 2},
-  demenagement: {y: 346, page: 2},
-  transit: {y: 278, page: 2}
+const positions = {
+  curfew: {
+    context_x: 60,
+    name: {x: 104, y: 650, page: 1},
+    birthday: {x: 104, y: 637, page: 1},
+    placeofbirth: {x: 180, y: 637, page: 1},
+    address: {x: 120, y: 623, page: 1},
+    city: {x: 90, y: 212, page: 1},
+    datesortie: {x: 74, y: 201, page: 1},
+    heuresortie: {x: 149, y: 201, page: 1},
+    context: {
+      travail: {y: 548, page: 1},
+      sante: {y: 502, page: 1},
+      imperial: {y: 455, page: 1},
+      handicap: {y: 410, page: 1},
+      judiciaire: {y: 374, page: 1},
+      missions: {y: 328, page: 1},
+      transit: {y: 295, page: 1},
+      animaux: {y: 248, page: 1}
+    }
+  },
+  quarantine: {
+    context_x: 63,
+    name: {x: 112, y: 516, page: 1},
+    birthday: {x: 110, y: 501, page: 1},
+    placeofbirth: {x: 225, y: 501, page: 1},
+    address: {x: 127, y : 488, page: 1},
+    city: {x: 98, y: 236, page: 2},
+    datesortie: {x: 78, y: 222, page: 2},
+    heuresortie: {x: 155, y: 223, page: 2},
+    context: {
+      sport: {y: 381, page: 1},
+      courses: {y: 269, page: 1},
+      famille: {y: 214, page: 1},
+      culte: {y: 160, page: 1},
+      demarche: {y: 760, page: 2},
+      travail: {y: 662, page: 2},
+      sante: {y: 564, page: 2},
+      imperieux: {y: 511, page: 2},
+      handicap: {y: 457, page: 2},
+      judiciaire: {y: 415, page: 2},
+      demenagement: {y: 346, page: 2},
+      transit: {y: 278, page: 2}
+    }
+  }
 }
 
-export async function generatePdf (profile, reasons, pdfBase) {
+export async function generatePdf (profile, reasons, pdfBase, pdfType) {
+  const pdfPositions = positions[pdfType]
   const creationInstant = new Date()
   const creationDate = creationInstant.toLocaleDateString('fr-FR')
   const creationHour = creationInstant
@@ -75,16 +108,16 @@ export async function generatePdf (profile, reasons, pdfBase) {
     page.drawText(text, { x, y, size, font })
   }
 
-  drawText(`${firstname} ${lastname}`, 112, 516)
-  drawText(birthday, 110, 501)
-  drawText(placeofbirth, 225, 501)
-  drawText(`${address} ${zipcode} ${city}`, 127, 488)
+  drawText(`${firstname} ${lastname}`, pdfPositions.name.x, pdfPositions.name.y)
+  drawText(birthday, pdfPositions.birthday.x, pdfPositions.birthday.y)
+  drawText(placeofbirth, pdfPositions.placeofbirth.x, pdfPositions.placeofbirth.y)
+  drawText(`${address} ${zipcode} ${city}`, pdfPositions.address.x, pdfPositions.address.y)
 
   reasons
     .split(', ')
     .forEach(reason => {
-      const val = ys[reason];
-      drawText('x', 63, val.y, 12, val.page)
+      const val = pdfPositions.context[reason];
+      drawText('x', pdfPositions.context_x, val.y, 12, val.page)
     })
 
   let locationSize = getIdealFontSize(font, profile.city, 83, 7, 11)
@@ -97,10 +130,18 @@ export async function generatePdf (profile, reasons, pdfBase) {
     locationSize = 7
   }
 
-  drawText(profile.city, 98, 236, locationSize, 2)
-  drawText(`${profile.datesortie}`, 78, 222, 11, 2)
-  drawText(`${profile.heuresortie}`, 155, 223, 11, 2)
+  drawText(profile.city, pdfPositions.city.x, pdfPositions.city.y, locationSize, pdfPositions.city.page)
+  drawText(`${profile.datesortie}`, pdfPositions.datesortie.x, pdfPositions.datesortie.y, 11, pdfPositions.datesortie.page)
+  drawText(`${profile.heuresortie}`, pdfPositions.heuresortie.x, pdfPositions.heuresortie.y, 11, pdfPositions.heuresortie.page)
 
+  await generateQRPage(data, font, pdfDoc, pdfType)
+
+  const pdfBytes = await pdfDoc.save()
+
+  return new Blob([pdfBytes], { type: 'application/pdf' })
+}
+
+async function generateQRPage(data, font, pdfDoc, pdfType) {
   const qrTitle1 = 'QR-code contenant les informations '
   const qrTitle2 = 'de votre attestation numérique'
 
@@ -109,18 +150,15 @@ export async function generatePdf (profile, reasons, pdfBase) {
   const qrImage = await pdfDoc.embedPng(generatedQR)
 
   pdfDoc.addPage()
-  const page3 = pdfDoc.getPages()[2]
-  page3.drawText(qrTitle1 + qrTitle2, { x: 50, y: page3.getHeight() - 70, size: 11, font, color: rgb(1, 1, 1) })
-  page3.drawImage(qrImage, {
+  const index = 'curfew' === pdfType ? 1 : 2; 
+  const page = pdfDoc.getPages()[index]
+  page.drawText(qrTitle1 + qrTitle2, { x: 50, y: page.getHeight() - 70, size: 11, font, color: rgb(1, 1, 1) })
+  page.drawImage(qrImage, {
     x: 50,
-    y: page3.getHeight() - 390,
+    y: page.getHeight() - 390,
     width: 300,
     height: 300,
   })
-
-  const pdfBytes = await pdfDoc.save()
-
-  return new Blob([pdfBytes], { type: 'application/pdf' })
 }
 
 function getIdealFontSize (font, text, maxWidth, minSize, defaultSize) {
