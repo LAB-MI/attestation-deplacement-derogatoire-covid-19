@@ -104,8 +104,8 @@ export function setReleaseDateTime (releaseDateInput) {
 
 export function setReleaseHour (releaseHour) {
   const loadedDate = new Date()
-  let hours = loadedDate.getHours();
-  hours = ("0" + hours).slice(-2);
+  let hours = loadedDate.getHours()
+  hours = ('0' + hours).slice(-2)
   releaseHour.value = `${hours}:${loadedDate.getMinutes()}`
 }
 
@@ -209,8 +209,8 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldsetsWrapper,
     }
     updateSecureLS(formInputs)
 
-    const pdfType = $('#curfew-reason-fieldset').classList.contains('targeted') ? 'curfew' : 'quarantine';
-    const pdfBase = 'curfew' === pdfType ? curfewPdfBase : quarantinePdfBase;
+    const pdfType = $('#curfew-reason-fieldset').classList.contains('targeted') ? 'curfew' : 'quarantine'
+    const pdfBase = pdfType === 'curfew' ? curfewPdfBase : quarantinePdfBase
     const pdfBlob = await generatePdf(getProfile(formInputs), reasons, pdfBase, pdfType)
 
     const creationInstant = new Date()
