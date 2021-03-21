@@ -24,3 +24,4 @@ La liste qui suit mentionne les participants des différents dépôts ayant cont
     Stéphane Ritter (https://github.com/infosteph)
     Enguerran P. (https://github.com/theblackhole)
     Quentin Dunand (https://github.com/tar-gezed)
+    François Mathieu (https://github.com/mapsred)
