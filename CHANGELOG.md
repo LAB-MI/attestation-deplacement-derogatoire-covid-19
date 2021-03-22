@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.4.0]
+
+- Modifications liées aux annonces gouvernementales du 18/03/2021
+- Développement de la partie Mesures renforcées
+
+## [2.3.0]
+
+- Modifications liées aux annonces gouvernementales du 18/03/2021
+- Développement de la partie Couvre-feu
+- Préparation de la partie Mesures renforcées
+
 ## [2.2.0]
 
 - Ajout de boutons pour choisir le contexte
