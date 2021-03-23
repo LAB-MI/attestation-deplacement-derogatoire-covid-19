@@ -113,7 +113,7 @@ export async function generatePdf (profile, reasons, context) {
     drawText(birthday, 111, 501)
     drawText(placeofbirth, 228, 501)
     drawText(`${address} ${zipcode} ${city}`, 126, 487)
-
+    console.debug(locationSize)
     drawText2(`Fait à ${profile.city}`, 72, 99, locationSize)
     drawText2(`Le ${profile.datesortie}`, 72, 83, 11)
     drawText2(`à ${profile.heuresortie}`, 310, 83, 11)
@@ -192,6 +192,39 @@ export async function generatePdf (profile, reasons, context) {
   return new Blob([pdfBytes], { type: 'application/pdf' })
 }
 
+/**
+ * Création du PDF buggée: « Uncaught (in promise) TypeError: `options.size` must be of type `number` or `n`, but was actually of type `null` »
+ *
+ * Solution ==> La valeur de retour du test doit être de type numérique, à défaut 0 mais pas `null` !
+ *
+ * Console d'erreur :
+ *
+ * assertIs validators.ts:156
+ * assertOrUndefined validators.ts:164
+ * drawText PDFPage.ts:885
+ * drawText2 pdf-util.js:105
+ * _callee$ pdf-util.js:117
+ * Babel 14
+ * generatePdf main.fb6bbcaf.js:49688
+ * _callee$ form-util.js:202
+ * Babel 8
+ * prepareInputs form-util.js:182
+ * prepareForm form-util.js:259
+ * parcelRequire<["js/main.js"]< main.js:14
+ * newRequire main.fb6bbcaf.js:47
+ * parcelRequire main.fb6bbcaf.js:81
+ * <anonymous> main.fb6bbcaf.js:120
+ * validators.ts:156:8
+ * Babel 6
+ * prepareInputs form-util.js:182
+ * (Async: EventListener.handleEvent)
+ * prepareInputs form-util.js:182
+ * prepareForm form-util.js:259
+ * parcelRequire<["js/main.js"]< main.js:14
+ * newRequire main.fb6bbcaf.js:47
+ * parcelRequire main.fb6bbcaf.js:81
+ * <anonymous> main.fb6bbcaf.js:120
+ */
 function getIdealFontSize (font, text, maxWidth, minSize, defaultSize) {
   let currentSize = defaultSize
   let textWidth = font.widthOfTextAtSize(text, defaultSize)
@@ -200,5 +233,5 @@ function getIdealFontSize (font, text, maxWidth, minSize, defaultSize) {
     textWidth = font.widthOfTextAtSize(text, --currentSize)
   }
 
-  return textWidth > maxWidth ? null : currentSize
+  return textWidth > maxWidth ? 0 : currentSize
 }
