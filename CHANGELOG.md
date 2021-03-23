@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.4.1]
+
+- Corrections typographiques
+
 ## [2.4.0]
 
 - Modifications liées aux annonces gouvernementales du 18/03/2021

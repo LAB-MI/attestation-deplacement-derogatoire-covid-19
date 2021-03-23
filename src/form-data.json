@@ -104,17 +104,17 @@
         {
           "code": "travail",
           "type":"checkbox",
-          "label": "<strong> 1. Activité professionnelle, enseignement et formation </strong> <br> Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle ou le lieu d’enseignement et de formation, déplacements professionnels ne pouvant être différés ;"
+          "label": "<strong> 1. Activité professionnelle, enseignement et formation </strong> <br> Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle ou le lieu d’enseignement et de formation, déplacements professionnels ne pouvant être différés"
         },
         {
           "code": "sante",
           "type":"checkbox",
-          "label": "<strong> 2. Consultation et soins</strong> <br> Déplacements pour des consultations, examens, actes de prévention (dont vaccination) et soins ne pouvant être assurés à distance ou pour l’achat de produits de santé ;"
+          "label": "<strong> 2. Consultation et soins</strong> <br> Déplacements pour des consultations, examens, actes de prévention (dont vaccination) et soins ne pouvant être assurés à distance ou pour l’achat de produits de santé"
         },
         {
           "code": "famille",
           "type":"checkbox",
-          "label": "<strong> 3. Motif familial impérieux, personnes vulnérables ou précaires ou gardes d’enfants </strong> <br> Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou précaires ou pour la garde d’enfants ;"
+          "label": "<strong> 3. Motif familial impérieux, personnes vulnérables ou précaires ou gardes d’enfants </strong> <br> Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou précaires ou pour la garde d’enfants"
         },
         {
           "code": "handicap",
@@ -124,22 +124,22 @@
         {
           "code": "judiciaire",
           "type":"checkbox",
-          "label": "<strong> 5. Convocation judiciaire ou administrative </strong> <br> Déplacements pour répondre à une convocation judiciaire ou administrative, déplacements pour se rendre chez un professionnel du droit, pour un acte ou une démarche qui ne peuvent être réalisés à distance ;"
+          "label": "<strong> 5. Convocation judiciaire ou administrative </strong> <br> Déplacements pour répondre à une convocation judiciaire ou administrative, déplacements pour se rendre chez un professionnel du droit, pour un acte ou une démarche qui ne peuvent être réalisés à distance"
         },
         {
           "code": "missions",
           "type":"checkbox",
-          "label": "<strong> 6. Mission d’intérêt général </strong> <br> Déplacements pour participer à des missions d’intérêt général sur demande de l’autorité administrative ;"
+          "label": "<strong> 6. Mission d’intérêt général </strong> <br> Déplacements pour participer à des missions d’intérêt général sur demande de l’autorité administrative"
         },
         {
           "code": "transit",
           "type":"checkbox",
-          "label": " <strong> 7. Déplacements de transit et longue distance </strong> <br> Déplacements liés à des transits ferroviaires, aériens ou en bus pour des déplacements de longues distances ;"
+          "label": " <strong> 7. Déplacements de transit et longue distance </strong> <br> Déplacements liés à des transits ferroviaires, aériens ou en bus pour des déplacements de longues distances"
         },
         {
           "code": "animaux",
           "type":"checkbox",
-          "label": "<strong> 8. Animaux de compagnie </strong> <br>Déplacements brefs dans un rayon maximal d’un kilomètre autour du domicile pour les besoins des animaux de compagnie ;"
+          "label": "<strong> 8. Animaux de compagnie </strong> <br>Déplacements brefs dans un rayon maximal d’un kilomètre autour du domicile pour les besoins des animaux de compagnie"
         }
       ]
     },
@@ -154,7 +154,7 @@
         {
           "code": "sport",
           "type":"checkbox",
-          "label": "<strong> 1. Activité physique et promenade </strong> <br> Déplacements liés soit à la promenade, soit à l'activité physique individuelle des personnes <br> <strong> [Attestation à remplir seulement à défaut de pouvoir présenter un justificatif de domicile]</strong> ;"
+          "label": "<strong> 1. Activité physique et promenade </strong> <br> Déplacements liés soit à la promenade, soit à l'activité physique individuelle des personnes <br> <strong> [Attestation à remplir seulement à défaut de pouvoir présenter un justificatif de domicile]</strong>"
         },
         {
           "label": "Déplacements au sein du département de résidence <a class=\"footnote\" href=\"#footnote2\">[2]</a>",
@@ -163,22 +163,22 @@
         {
           "code": "achats",
           "type":"checkbox",
-          "label": " <strong> 2. Achats </strong> <br> Déplacements pour effectuer des achats de première nécessité ou des retraits de commandes ;"
+          "label": " <strong> 2. Achats </strong> <br> Déplacements pour effectuer des achats de première nécessité ou des retraits de commandes"
         },
         {
           "code": "enfants",
           "type":"checkbox",
-          "label": "<strong> 3. Accompagnement des enfants à l’école </strong> <br> Déplacements pour emmener et aller chercher les enfants à l’école et à l’occasion de leurs activités péri-scolaires ;"
+          "label": "<strong> 3. Accompagnement des enfants à l’école </strong> <br> Déplacements pour emmener et aller chercher les enfants à l’école et à l’occasion de leurs activités péri-scolaires"
         },
         {
           "code": "culte_culturel",
           "type":"checkbox",
-          "label": "<strong> 4. Etablissement culturel ou lieu de culte</strong> <br> Déplacements pour se rendre dans un établissement culturel (bibliothèques et médiathèques) ou un lieu de culte ;"
+          "label": "<strong> 4. Etablissement culturel ou lieu de culte</strong> <br> Déplacements pour se rendre dans un établissement culturel (bibliothèques et médiathèques) ou un lieu de culte"
         },
         {
           "code": "demarche",
           "type": "checkbox",
-          "label": "<strong> 5. Démarches administratives ou juridiques</strong> <br> Déplacements pour se rendre dans un service public pour un acte ou une démarche qui ne peuvent être réalisés à distance ;"
+          "label": "<strong> 5. Démarches administratives ou juridiques</strong> <br> Déplacements pour se rendre dans un service public pour un acte ou une démarche qui ne peuvent être réalisés à distance"
         },
         {
           "label": "Déplacements sans limitation de distance",
@@ -187,37 +187,37 @@
         {
           "code": "travail",
           "type": "checkbox",
-          "label": "<strong> 6. Activité professionnelle, enseignement et formation, mission d’intérêt général</strong> <br> Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle ou le lieu d’enseignement et de formation, déplacements professionnels ne pouvant être différés, livraisons à domicile, déplacements pour effectuer des achats de fournitures nécessaires à l'activité professionnelle, déplacements liés à des missions d’intérêt général sur demande de l’autorité administrative ;"
+          "label": "<strong> 6. Activité professionnelle, enseignement et formation, mission d’intérêt général</strong> <br> Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle ou le lieu d’enseignement et de formation, déplacements professionnels ne pouvant être différés, livraisons à domicile, déplacements pour effectuer des achats de fournitures nécessaires à l'activité professionnelle, déplacements liés à des missions d’intérêt général sur demande de l’autorité administrative"
         },
         {
           "code": "sante",
           "type": "checkbox",
-          "label": "<strong> 7. Santé (consultations et soins)</strong> <br> Déplacements pour des consultations, examens, actes de prévention (dont vaccination) et soins ne pouvant être assurés à distance ou pour l’achat de produits de santé ;"
+          "label": "<strong> 7. Santé (consultations et soins)</strong> <br> Déplacements pour des consultations, examens, actes de prévention (dont vaccination) et soins ne pouvant être assurés à distance ou pour l’achat de produits de santé"
         },
         {
           "code": "famille",
           "type": "checkbox",
-          "label": "<strong> 8. Motif familial impérieux, personnes vulnérables ou précaires ou gardes d’enfants </strong> <br> Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou précaires ou pour la garde d’enfants ;"
+          "label": "<strong> 8. Motif familial impérieux, personnes vulnérables ou précaires ou gardes d’enfants </strong> <br> Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou précaires ou pour la garde d’enfants"
         },
         {
           "code": "handicap",
           "type": "checkbox",
-          "label": "<strong> 9. Situation de handicap </strong> <br> Déplacements des personnes en situation de handicap et de leur accompagnant ;"
+          "label": "<strong> 9. Situation de handicap </strong> <br> Déplacements des personnes en situation de handicap et de leur accompagnant"
         },
         {
           "code": "judiciaire",
           "type":"checkbox",
-          "label": "<strong> 10. Convocation judiciaire ou administrative </strong> <br> Déplacements pour répondre à une convocation judiciaire ou administrative, déplacements pour se rendre chez un professionnel du droit, pour un acte ou une démarche qui ne peuvent être réalisés à distance ;"
+          "label": "<strong> 10. Convocation judiciaire ou administrative </strong> <br> Déplacements pour répondre à une convocation judiciaire ou administrative, déplacements pour se rendre chez un professionnel du droit, pour un acte ou une démarche qui ne peuvent être réalisés à distance"
         },
         {
           "code": "demenagement",
           "type":"checkbox",
-          "label": "<strong> 11. Déménagement </strong> <br> Déplacements liés à un déménagement résultant d'un changement de domicile et déplacements indispensables à l'acquisition ou à la location d’une résidence principale, insusceptibles d'être différés ;"
+          "label": "<strong> 11. Déménagement </strong> <br> Déplacements liés à un déménagement résultant d'un changement de domicile et déplacements indispensables à l'acquisition ou à la location d’une résidence principale, insusceptibles d'être différés"
         },
         {
           "code": "transit",
           "type":"checkbox",
-          "label": "<strong> 12. Déplacement de transit vers les gares et les aéroports </strong>."
+          "label": "<strong> 12. Déplacement de transit vers les gares et les aéroports </strong>"
         }
       ]
     }
