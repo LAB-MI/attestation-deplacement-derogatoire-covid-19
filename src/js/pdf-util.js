@@ -195,7 +195,7 @@ export async function generatePdf (profile, reasons, context) {
 /**
  * Création du PDF buggée: « Uncaught (in promise) TypeError: `options.size` must be of type `number` or `n`, but was actually of type `null` »
  *
- * Solution ==> La valeur de retour du test doit être de type numérique, à défaut 0 mais pas `null` !
+ * Solution ==> La valeur de retour de la fonction getIdealFontSize() doit être de type numérique, à défaut 0 mais pas `null` !
  *
  * Console d'erreur :
  *

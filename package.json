@@ -53,7 +53,7 @@
     "postcss-preset-env": "^6.7.0",
     "posthtml-expressions": "^1.6.0",
     "prettier": "^2.1.2",
-    "react-snap": "^1.23.0",
+    "react-snap": "^1.13.1",
     "rimraf": "^3.0.2",
     "serve": "^11.3.2"
   },
@@ -61,6 +61,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "bootstrap": "^4.5.3",
+    "npm": "^7.7.0",
     "pdf-lib": "^1.11.2",
     "qrcode": "^1.4.4",
     "remove-accents": "^0.4.2",
