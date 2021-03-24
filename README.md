@@ -3,7 +3,7 @@
 [![Follow JV conseil – Internet Consulting on Twitter](https://img.shields.io/twitter/follow/JVconseil.svg?style=social&logo=twitter)](https://twitter.com/JVconseil)
 
 ```py
-#!/usr/bin/env python3.8.8
+#!/usr/bin/env python3.8
 # -*- coding: UTF-8 -*-
 
 """Simple test en langage Python pour connaître le nombre de villes
