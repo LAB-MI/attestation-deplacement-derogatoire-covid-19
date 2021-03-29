@@ -182,6 +182,12 @@ p {
   transform: translateY(-2px);
 }
 
+.group-reason {
+  font-weight: 700;
+  text-decoration: underline;
+  margin-top: 2em;
+}
+
 @media (prefers-color-scheme: dark) {
   #form-profile .form-radio-label .form-check-label {
     color: #ddd;
