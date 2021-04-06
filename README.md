@@ -44,3 +44,5 @@ service :
 - [qrcode](https://github.com/soldair/node-qrcode)
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/license)
+
+Pour une meilleure accessibilité des documents pdf générés, nous utilisons la police Luciole (https://luciole-vision.com/)

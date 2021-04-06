@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.5.1]
+
+- Corrections typographiques
+
+## [2.5.0]
+
+- Modifications liées aux annonces gouvernementales du 31/03/2021
+- Génération complète du PDF par l'application à partir d'un fichier de configuration JSON
+- Amélioration de l'accessibilité : utilisation de la police LUCIOLE (https://www.luciole-vision.com/) conçue spécifiquement pour les personnes malvoyantes
+
 ## [2.4.1]
 
 - Corrections typographiques

@@ -73,40 +73,39 @@ const createFormGroup = ({
   return formGroup
 }
 
-const createReasonField = (reasonData, context) => {
-  const formReasonAttrs = { className: 'form-checkbox align-items-center' }
-  const formReason = createElement('div', formReasonAttrs)
-  const appendToReason = appendTo(formReason)
+function createReasonField (context) {
+  return (reasonData) => {
+    const formReasonAttrs = { className: 'form-checkbox align-items-center' }
+    const formReason = createElement('div', formReasonAttrs)
+    const appendToReason = appendTo(formReason)
 
-  const id = `checkbox-${context}-${reasonData.code}`
-  const inputReasonAttrs = {
-    className: 'form-check-input',
-    type: 'checkbox',
-    id,
-    name: 'field-reason',
-    value: reasonData.code,
+    const id = `checkbox-${context}-${reasonData.code}`
+    const inputReasonAttrs = {
+      className: 'form-check-input',
+      type: 'checkbox',
+      id,
+      name: 'field-reason',
+      value: reasonData.code,
+    }
+    const inputReason = createElement('input', inputReasonAttrs)
+
+    // const titleAttrs = { innerHTML: reasonData.title }
+    // const title = createElement('h4', titleAttrs)
+    // const labelAttrs = { innerHTML: reasonData.label, className: 'form-checkbox-label', for: id }
+    // const label = createElement('label', labelAttrs)
+    // const filtertitre = titreAttrs.filter(field => field !== undefined)
+
+    if (reasonData.type === 'title') {
+      const titleAttrs = { innerHTML: reasonData.label, className: 'group-reason' }
+      const title = createElement('h5', titleAttrs)
+      appendToReason([title])
+    } else {
+      const labelAttrs = { innerHTML: reasonData.label, className: 'form-checkbox-label', for: id }
+      const label = createElement('label', labelAttrs)
+      appendToReason([inputReason, label])
+    }
+    return formReason
   }
-  const inputReason = createElement('input', inputReasonAttrs)
-
-  // const titleAttrs = { innerHTML: reasonData.title }
-  // const title = createElement('h4', titleAttrs)
-  // const labelAttrs = { innerHTML: reasonData.label, className: 'form-checkbox-label', for: id }
-  // const label = createElement('label', labelAttrs)
-  // const filtertitre = titreAttrs.filter(field => field !== undefined)
-
-  if (reasonData.type === 'title') {
-    const titleAttrs = { innerHTML: reasonData.label, className: 'group-reason' }
-    const title = createElement('h5', titleAttrs)
-    appendToReason([title])
-  } else {
-    const labelAttrs = { innerHTML: reasonData.label, className: 'form-checkbox-label', for: id }
-    const label = createElement('label', labelAttrs)
-    appendToReason([inputReason, label])
-  }
-  // appendToReason([inputReason, title, label])
-  // console.log(reasonData.type)
-  // appendToReason(reasonData.title ? [inputReason, title, label] : [inputReason, label])
-  return formReason
 }
 
 const createReasonFieldset = (reasonsData, sanitaryContextData) => {
@@ -118,24 +117,26 @@ const createReasonFieldset = (reasonsData, sanitaryContextData) => {
   const fieldset = createElement('fieldset', fieldsetAttrs)
   const appendToFieldset = appendTo(fieldset)
 
-  const textSubscribeReasonAttrs = {
-    innerHTML: 'Je certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
-  }
-  const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)
+  // const textSubscribeReasonAttrs = {
+  //   innerHTML: 'Je certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
+  // }
+  // const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)
 
   const legendAttrs = {
     className: 'legend titre-3',
-    innerHTML: 'Choisissez un motif de déplacement',
+    innerHTML: 'Je me déplace entre 19h00 et 06h00 pour l\'une des raisons suivantes :',
   }
   const legend = createElement('p', legendAttrs)
 
-  const textAlertAttrs = { className: 'msg-alert hidden', innerHTML: 'Veuillez choisir un motif' }
-  const textAlert = createElement('p', textAlertAttrs)
+  // const textAlertAttrs = { className: 'msg-alert hidden', innerHTML: 'Veuillez choisir un motif' }
+  // const textAlert = createElement('p', textAlertAttrs)
 
-  const reasonsFields = reasonsData.items.map(createReasonField, reasonsData.key)
+  const reasonsFields = reasonsData.items.map(createReasonField(reasonsData.key))
 
-  appendToFieldset([textSubscribeReason, legend, textAlert, ...reasonsFields])
-  // Créer un form-checkbox par motif
+  // const footnoteAttrs = { id: 'footnote1', className: 'footnote', innerHTML: ' [1] Les personnes souhaitant bénéficier de l’une de ces exceptions doivent se munir s’il y a lieu, lors de leurs déplacements hors de leur domicile, d’un document leur permettant de justifier que le déplacement considéré entre dans le champ de l’une de ces exceptions. ' }
+  // const footnote = createElement('p', footnoteAttrs)
+
+  appendToFieldset([legend, ...reasonsFields])
   return fieldset
 }
 
@@ -147,10 +148,18 @@ const createReasonFieldsetQuarantine = (reasonsData) => {
 
   const fieldset = createElement('fieldset', fieldsetAttrs)
   const appendToFieldset = appendTo(fieldset)
+  const reasonsFields = reasonsData.items.map(createReasonField(reasonsData.key))
 
-  const reasonsFields = reasonsData.items.map(createReasonField, reasonsData.key)
+  const footnoteAttrs = { id: 'footnote2', className: 'footnote', innerHTML: ' [1] Pour les personnes résidant aux frontières d’un département, une tolérance de 30 kilomètres au-delà du département est acceptée. ' }
+  const footnote = createElement('p', footnoteAttrs)
 
-  appendToFieldset([...reasonsFields])
+  const legendAttrs = {
+    className: 'legend titre-3',
+    innerHTML: 'Je me déplace entre 06h00 et 19h00 pour l\'une des raisons suivantes :',
+  }
+  const legend = createElement('p', legendAttrs)
+
+  appendToFieldset([legend, ...reasonsFields, footnote])
   // Créer un form-checkbox par motif
   return fieldset
 }
@@ -166,8 +175,8 @@ export function createForm () {
 
   const formFirstPart = formData
     .flat(1)
-    .filter(field => field.key !== 'reason-curfew')
-    .filter(field => field.key !== 'reason-quarantine')
+    .filter(field => field.key !== 'curfew')
+    .filter(field => field.key !== 'quarantine')
     .filter(field => !field.isHidden)
     .map((field,
       index) => {
@@ -182,11 +191,11 @@ export function createForm () {
 
   const reasonsDataCurfew = formData
     .flat(1)
-    .find(field => field.key === 'reason-curfew')
+    .find(field => field.key === 'curfew')
 
   const reasonsDataQuarantine = formData
     .flat(1)
-    .find(field => field.key === 'reason-quarantine')
+    .find(field => field.key === 'quarantine')
 
   const reasonFieldsetCurfew = createReasonFieldset(reasonsDataCurfew)
   const reasonFieldsetQuarantine = createReasonFieldsetQuarantine(reasonsDataQuarantine)
@@ -211,14 +220,14 @@ export function createForm () {
   contextWrapper.appendChild(buttonWrapper)
   const reasonFielsetWrapper = createElement('div', { className: 'fieldset-wrapper  hidden' })
 
-  const quarantineSubtitle = createElement('div', { className: 'quarantine-subtitle  hidden' })
-  const quarantineSubtitleText = document.createTextNode('J\'effectue un déplacement le week-end entre 06h00 et 19h00 sur un territoire soumis au confinement')
-  quarantineSubtitle.appendChild(quarantineSubtitleText)
-  const curfewSubtitle = createElement('div', { className: 'curfew-subtitle  hidden' })
-  const curfewSubtitleText = document.createTextNode('J\'effectue un déplacement entre 19h00 et 06h00 sur un territoire soumis au couvre-feu.')
-  curfewSubtitle.appendChild(curfewSubtitleText)
-  reasonFieldsetCurfew.prepend(quarantineSubtitle)
-  reasonFieldsetCurfew.prepend(curfewSubtitle)
+  // const quarantineSubtitle = createElement('div', { className: 'quarantine-subtitle  hidden' })
+  // const quarantineSubtitleText = document.createTextNode('J\'effectue un déplacement entre 06h00 et 19h00.')
+  // quarantineSubtitle.appendChild(quarantineSubtitleText)
+  // const curfewSubtitle = createElement('div', { className: 'curfew-subtitle  hidden' })
+  // const curfewSubtitleText = document.createTextNode('J\'effectue un déplacement entre 19h00 et 06h00.')
+  // curfewSubtitle.appendChild(curfewSubtitleText)
+  // reasonFieldsetQuarantine.prepend(quarantineSubtitle)
+  // reasonFieldsetCurfew.prepend(curfewSubtitle)
   reasonFielsetWrapper.appendChild(reasonFieldsetCurfew)
   reasonFielsetWrapper.appendChild(reasonFieldsetQuarantine)
   appendToForm([...createTitle(), ...formFirstPart, contextWrapper, reasonFielsetWrapper])
