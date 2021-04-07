@@ -1,6 +1,14 @@
 # Changelog
+## [2.5.3]
 
-## [2.5.1]
+- Correction warning console
+
+## [2.5.2]
+
+- Amélioration UI
+- Corrections typographiques
+
+- ## [2.5.1]
 
 - Corrections typographiques
 

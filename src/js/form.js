@@ -89,12 +89,6 @@ function createReasonField (context) {
     }
     const inputReason = createElement('input', inputReasonAttrs)
 
-    // const titleAttrs = { innerHTML: reasonData.title }
-    // const title = createElement('h4', titleAttrs)
-    // const labelAttrs = { innerHTML: reasonData.label, className: 'form-checkbox-label', for: id }
-    // const label = createElement('label', labelAttrs)
-    // const filtertitre = titreAttrs.filter(field => field !== undefined)
-
     if (reasonData.type === 'title') {
       const titleAttrs = { innerHTML: reasonData.label, className: 'group-reason' }
       const title = createElement('h5', titleAttrs)
@@ -117,24 +111,13 @@ const createReasonFieldset = (reasonsData, sanitaryContextData) => {
   const fieldset = createElement('fieldset', fieldsetAttrs)
   const appendToFieldset = appendTo(fieldset)
 
-  // const textSubscribeReasonAttrs = {
-  //   innerHTML: 'Je certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
-  // }
-  // const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)
-
   const legendAttrs = {
     className: 'legend titre-3',
     innerHTML: 'Je me déplace entre 19h00 et 06h00 pour l\'une des raisons suivantes :',
   }
   const legend = createElement('p', legendAttrs)
 
-  // const textAlertAttrs = { className: 'msg-alert hidden', innerHTML: 'Veuillez choisir un motif' }
-  // const textAlert = createElement('p', textAlertAttrs)
-
   const reasonsFields = reasonsData.items.map(createReasonField(reasonsData.key))
-
-  // const footnoteAttrs = { id: 'footnote1', className: 'footnote', innerHTML: ' [1] Les personnes souhaitant bénéficier de l’une de ces exceptions doivent se munir s’il y a lieu, lors de leurs déplacements hors de leur domicile, d’un document leur permettant de justifier que le déplacement considéré entre dans le champ de l’une de ces exceptions. ' }
-  // const footnote = createElement('p', footnoteAttrs)
 
   appendToFieldset([legend, ...reasonsFields])
   return fieldset
@@ -199,12 +182,8 @@ export function createForm () {
 
   const reasonFieldsetCurfew = createReasonFieldset(reasonsDataCurfew)
   const reasonFieldsetQuarantine = createReasonFieldsetQuarantine(reasonsDataQuarantine)
-  const curfewButton = createElement('button', { type: 'button', className: 'curfew-button  context-button  btn', innerHTML: 'Couvre-feu  <br/> (19h-6h)' })
-  // const curfewLink = document.createTextNode('Couvre-feu  (19h-6h)')
-  // curfewButton.appendChild(curfewButton)
-  const quarantineButton = createElement('button', { type: 'button', className: 'quarantine-button  context-button  btn', innerHTML: 'Journée <br/> (6h-19h)' })
-  // const quarantineLink = document.createTextNode('Journée (6h-19h)')
-  // quarantineButton.appendChild(quarantineButton)
+  const curfewButton = createElement('button', { type: 'button', className: 'curfew-button  context-button  btn', innerHTML: '<i class="fa fa-moon inline-block mr-1"></i> Couvre-feu  <br/> (19h-6h)' })
+  const quarantineButton = createElement('button', { type: 'button', className: 'quarantine-button  context-button  btn', innerHTML: '<i class="fa fa-sun inline-block mr-1"></i> Journée <br/> (6h-19h)' })
   const buttonWrapper = createElement('div', { className: 'button-wrapper' })
   buttonWrapper.appendChild(curfewButton)
   buttonWrapper.appendChild(quarantineButton)
@@ -212,22 +191,11 @@ export function createForm () {
   const contextTitleText = document.createTextNode('Choisissez un contexte')
   contextTitle.appendChild(contextTitleText)
   const contextSubtitle = createElement('p', { className: 'context-subtitle' })
-  // const contextSubtitleText = document.createTextNode('* Le contexte "Week-end (6h-18h)" ne s\'applique qu\'aux territoires concernés par des dispositions spécifiques')
-  // contextSubtitle.appendChild(contextSubtitleText)
   const contextWrapper = createElement('div', { className: 'context-wrapper' })
   contextWrapper.appendChild(contextTitle)
   contextWrapper.appendChild(contextSubtitle)
   contextWrapper.appendChild(buttonWrapper)
   const reasonFielsetWrapper = createElement('div', { className: 'fieldset-wrapper  hidden' })
-
-  // const quarantineSubtitle = createElement('div', { className: 'quarantine-subtitle  hidden' })
-  // const quarantineSubtitleText = document.createTextNode('J\'effectue un déplacement entre 06h00 et 19h00.')
-  // quarantineSubtitle.appendChild(quarantineSubtitleText)
-  // const curfewSubtitle = createElement('div', { className: 'curfew-subtitle  hidden' })
-  // const curfewSubtitleText = document.createTextNode('J\'effectue un déplacement entre 19h00 et 06h00.')
-  // curfewSubtitle.appendChild(curfewSubtitleText)
-  // reasonFieldsetQuarantine.prepend(quarantineSubtitle)
-  // reasonFieldsetCurfew.prepend(curfewSubtitle)
   reasonFielsetWrapper.appendChild(reasonFieldsetCurfew)
   reasonFielsetWrapper.appendChild(reasonFieldsetQuarantine)
   appendToForm([...createTitle(), ...formFirstPart, contextWrapper, reasonFielsetWrapper])

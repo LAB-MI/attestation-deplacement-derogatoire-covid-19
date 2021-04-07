@@ -142,11 +142,7 @@ export async function generatePdf (profile, reasons, context) {
 
   const qrImage = await pdfDoc.embedPng(generatedQR)
   const pageX0 = pdfDoc.getPages()[0]
-  // if (context === 'quarantine') {
-  //   pageX0 = pdfDoc.getPages()[2 - 1]
-  // }
   pageX0.drawText(qrTitle1 + '\n' + qrTitle2, { x: 470, y: 121, size: 6, font, lineHeight: 10, color: rgb(1, 1, 1) })
-
   pageX0.drawImage(qrImage, {
     x: pageX0.getWidth() - 107,
     y: 21,
@@ -156,9 +152,6 @@ export async function generatePdf (profile, reasons, context) {
 
   pdfDoc.addPage()
   const pageX = pdfDoc.getPages()[1]
-  // if (context === 'quarantine') {
-  //   pageX = pdfDoc.getPages()[2]
-  // }
   pageX.drawText(qrTitle1 + qrTitle2, { x: 50, y: pageX.getHeight() - 70, size: 11, font, color: rgb(1, 1, 1) })
   pageX.drawImage(qrImage, {
     x: 50,

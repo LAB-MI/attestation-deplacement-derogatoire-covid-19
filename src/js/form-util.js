@@ -210,36 +210,19 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldsetsWrapper,
 
   const curfewFieldset = $('#curfew-reason-fieldset')
   const quarantineFieldset = $('#quarantine-reason-fieldset')
-  const curfewSubtitle = $('.curfew-subtitle')
-  const quarantineSubtitle = $('.quarantine-subtitle')
-
-  // contextWrapper.classList.remove('context-wrapper-error')
-  // reasonFieldsetsWrapper.classList.toggle('hidden', false)
-
-  // curfewFieldset.classList.toggle('in-quarantine', false)
-  // curfewFieldset.classList.toggle('targeted', true)
-  // quarantineFieldset.classList.toggle('targeted', false)
-  // curfewSubtitle.classList.toggle('hidden', false)
-  // quarantineSubtitle.classList.toggle('hidden', true)
 
   $$('.context-button').map(anchor => anchor.addEventListener('click', (event) => {
     contextWrapper.classList.remove('context-wrapper-error')
     reasonFieldsetsWrapper.classList.toggle('hidden', false)
     if (event.target.className.includes('curfew-button')) {
       context = 'curfew'
-      // curfewFieldset.classList.toggle('in-quarantine', false)
       curfewFieldset.classList.toggle('targeted', true)
       quarantineFieldset.classList.toggle('targeted', false)
-      curfewSubtitle.classList.toggle('hidden', false)
-      quarantineSubtitle.classList.toggle('hidden', true)
     }
     if (event.target.className.includes('quarantine-button')) {
       context = 'quarantine'
-      // curfewFieldset.classList.toggle('in-quarantine', true)
       curfewFieldset.classList.toggle('targeted', false)
       quarantineFieldset.classList.toggle('targeted', true)
-      curfewSubtitle.classList.toggle('hidden', true)
-      quarantineSubtitle.classList.toggle('hidden', false)
     }
   }))
 }

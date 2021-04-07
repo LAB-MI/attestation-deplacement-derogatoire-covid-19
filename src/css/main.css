@@ -740,14 +740,14 @@ input[type=number] {
 
 .curfew-button {
   display: block;
-  width: 40%;
+  width: 45%;
   text-decoration: none;
   background: #DDF;
 }
 
 .quarantine-button {
   display: block;
-  width: 40%;
+  width: 45%;
   text-decoration: none;
   background: #FEE;
 }
