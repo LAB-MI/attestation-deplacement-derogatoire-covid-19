@@ -1,6 +1,6 @@
 {
   "name": "attestation-derogatoire-de-deplacement",
-  "version": "2.4.0",
+  "version": "2.5.3",
   "description": "Générateur d'attestation de déplacement dérogatoire'",
   "main": "certificate.js",
   "scripts": {
@@ -60,6 +60,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@pdf-lib/fontkit": "^1.1.1",
     "bootstrap": "^4.5.3",
     "pdf-lib": "^1.11.2",
     "qrcode": "^1.4.4",
