@@ -96,7 +96,7 @@
         {
           "code": "travail",
           "type":"checkbox",
-          "label": "<strong> Activité professionnelle, enseignement et formation, mission d’intérêt général </strong> <br>  - Déplacements entre le domicile et le lieu de travail ou d’enseignement ou de formation.<br> - Déplacements professionnels ne pouvant être différés, livraisons.<br> - Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle.<br> - Déplacements liés à des missions d’intérêt général sur demande de l’autorité administrative."
+          "label": "<strong> Activité professionnelle, enseignement et formation, mission d’intérêt général </strong> <br>  - Déplacements entre le domicile et le lieu de travail ou d’enseignement ou de formation.<br> - Déplacements professionnels ne pouvant être différés, livraisons.<br> - Déplacements liés à des missions d’intérêt général sur demande de l’autorité administrative."
         },
         {
           "code": "sante",
@@ -111,12 +111,17 @@
         {
           "code": "convocation_demarches",
           "type":"checkbox",
-          "label": "<strong> Convocation judiciaire ou administrative, démarches ne pouvant être menées à distance </strong> <br> - Déplacements pour répondre à une convocation judiciaire ou administrative, pour se rendre dans un service public ou chez un professionnel du droit, pour un acte ou une démarche qui ne peut être réalisé à distance."
+          "label": "<strong> Convocation judiciaire ou administrative, démarches ne pouvant être menées à distance </strong> <br> - Déplacements pour répondre à une convocation judiciaire ou administrative ou pour se rendre chez un professionnel du droit pour un acte ou une démarche qui ne peut être réalisé à distance."
+        },
+        {
+          "code": "transit",
+          "type":"checkbox",
+          "label": "<strong> Déplacements liés à des transferts ou transits depuis des gares ou aéroports dans le cadre de déplacements de longue distance</strong> <br>"
         },
         {
           "code": "animaux",
           "type":"checkbox",
-          "label": "<strong> Animaux de compagnie, le soir et la nuit </strong> <br> - Déplacements brefs pour les besoins des animaux de compagnie (dans un rayon de 1 kilomètre autour du domicile)."
+          "label": "<strong> Animaux de compagnie </strong> <br> - Déplacements brefs pour les besoins des animaux de compagnie (dans un rayon de 1 kilomètre autour du domicile)."
         }
       ]
     },

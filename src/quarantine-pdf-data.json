@@ -30,7 +30,8 @@
     "height": "12",
     "font": "Luciole",
     "size": "9",
-    "label": "En application de l’article 4 du décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales"
+    "label": "En application de l’article 4 du décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales",
+    "block": 2
   },
   {
     "type": "text",
@@ -53,7 +54,8 @@
     "height": "16",
     "font": "Luciole",
     "size": "12",
-    "label": "Nom et prénom :"
+    "label": "Nom et prénom :",
+    "block": 3
   },
   {
     "type": "input",
@@ -88,7 +90,8 @@
     "height": "22",
     "font": "LucioleBold",
     "size": "16",
-    "label": "Je me déplace entre 6h et 19h pour l’une des raisons suivantes :"
+    "label": "Je me déplace entre 6h et 19h pour l’une des raisons suivantes :",
+    "block": 3
   },
   {
     "type": "checkbox",
@@ -100,7 +103,9 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Activité professionnelle, enseignement et formation, mission d’intérêt général"
+    "label": "Activité professionnelle, enseignement et formation, mission d’intérêt général",
+    "group": 1,
+    "block": 2.8
   },
   {
     "type": "text",
@@ -111,7 +116,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements entre le domicile et le lieu de travail ou d’enseignement ou de formation."
+    "label": "- Déplacements entre le domicile et le lieu de travail ou d’enseignement ou de formation.",
+    "group": 1
   },
   {
     "type": "text",
@@ -122,7 +128,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements professionnels ne pouvant être différés, livraisons."
+    "label": "- Déplacements professionnels ne pouvant être différés, livraisons.",
+    "group": 1
   },
   {
     "type": "text",
@@ -133,7 +140,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle."
+    "label": "- Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle.",
+    "group": 1
   },
   {
     "type": "text",
@@ -144,7 +152,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements liés à des missions d’intérêt général sur demande de l’autorité administrative."
+    "label": "- Déplacements liés à des missions d’intérêt général sur demande de l’autorité administrative.",
+    "group": 1
   },
   {
     "type": "checkbox",
@@ -156,7 +165,9 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Santé (consultations et soins)"
+    "label": "Santé (consultations et soins)",
+    "group": 2,
+    "block": 2.8
   },
   {
     "type": "text",
@@ -167,7 +178,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements pour des consultations, examens, actes de prévention (dont vaccination)"
+    "label": "- Déplacements pour des consultations, examens, actes de prévention (dont vaccination)",
+    "group": 2
   },
   {
     "type": "text",
@@ -178,7 +190,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "et soins ne pouvant être assurés à distance ou pour l’achat de produits de santé."
+    "label": "et soins ne pouvant être assurés à distance ou pour l’achat de produits de santé.",
+    "group": 2
   },
   {
     "type": "checkbox",
@@ -190,7 +203,9 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Motif familial impérieux, assistance aux personnes vulnérables, garde d’enfants, situation de handicap"
+    "label": "Motif familial impérieux, assistance aux personnes vulnérables, garde d’enfants, situation de handicap",
+    "group": 3,
+    "block": 2.8
   },
   {
     "type": "text",
@@ -201,7 +216,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou précaires, "
+    "label": "- Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou précaires, ",
+    "group": 3
   },
   {
     "type": "text",
@@ -212,7 +228,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "ou pour la garde d’enfants."
+    "label": "ou pour la garde d’enfants.",
+    "group": 3
   },
   {
     "type": "text",
@@ -223,7 +240,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements de personnes en situation de handicap et de leur accompagnant."
+    "label": "- Déplacements de personnes en situation de handicap et de leur accompagnant.",
+    "group": 3
   },
   {
     "type": "checkbox",
@@ -235,7 +253,9 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Convocation judiciaire ou administrative, démarches ne pouvant être menées à distance"
+    "label": "Convocation judiciaire ou administrative, démarches ne pouvant être menées à distance",
+    "group": 4,
+    "block": 2.8
   },
   {
     "type": "text",
@@ -246,7 +266,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements pour répondre à une convocation judiciaire ou administrative, pour se rendre dans"
+    "label": "- Déplacements pour répondre à une convocation judiciaire ou administrative, pour se rendre dans",
+    "group": 4
   },
   {
     "type": "text",
@@ -257,7 +278,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "un service public ou chez un professionnel du droit, pour un acte ou une démarche qui ne peut être "
+    "label": "un service public ou chez un professionnel du droit, pour un acte ou une démarche qui ne peut être ",
+    "group": 4
   },
   {
     "type": "text",
@@ -268,7 +290,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "réalisé à distance."
+    "label": "réalisé à distance.",
+    "group": 4
   },
   {
     "type": "checkbox",
@@ -280,7 +303,9 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Déménagement"
+    "label": "Déménagement",
+    "group": 5,
+    "block": 2.8
   },
   {
     "type": "text",
@@ -291,7 +316,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements liés à un déménagement résultant d’un changement de domicile."
+    "label": "- Déplacements liés à un déménagement résultant d’un changement de domicile.",
+    "group": 5
   },
   {
     "type": "text",
@@ -302,7 +328,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements indispensables à l’acquisition ou à la location d’une résidence principale,"
+    "label": "- Déplacements indispensables à l’acquisition ou à la location d’une résidence principale,",
+    "group": 5
   },
   {
     "type": "text",
@@ -313,7 +340,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "ne pouvant être différés."
+    "label": "ne pouvant être différés.",
+    "group": 5
   },
   {
     "type": "checkbox",
@@ -325,10 +353,13 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Achats, établissements culturels ou lieux de culte "
+    "label": "Achats, établissements culturels ou lieux de culte ",
+    "group": 6,
+    "block": 2.8
   },
   {
     "type": "text",
+    "reason": "achats_culte_culturel",
     "page": 1,
     "top": "865",
     "left": "417",
@@ -336,7 +367,9 @@
     "height": "18",
     "font": "LucioleBoldItalic",
     "size": "13",
-    "label": "(au sein de mon département*)"
+    "label": "(au sein de mon département*)",
+    "group": 6,
+    "sameline": true
   },
   {
     "type": "text",
@@ -347,7 +380,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements pour effectuer des achats de première nécessité, pour les retraits de commandes,"
+    "label": "- Déplacements pour effectuer des achats de première nécessité, pour les retraits de commandes,",
+    "group": 6
   },
   {
     "type": "text",
@@ -358,7 +392,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "ou pour bénéficier de prestations de service."
+    "label": "ou pour bénéficier de prestations de service.",
+    "group": 6
   },
   {
     "type": "text",
@@ -369,7 +404,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements pour se rendre dans un établissement culturel ouvert ou un lieu de culte."
+    "label": "- Déplacements pour se rendre dans un établissement culturel ouvert ou un lieu de culte.",
+    "group": 6
   },
   {
     "type": "text",
@@ -380,7 +416,8 @@
     "height": "16",
     "font": "LucioleItalic",
     "size": "12",
-    "label": "Note : Pour les personnes résidant aux frontières d’un département,"
+    "label": "Note : Pour les personnes résidant aux frontières d’un département,",
+    "group": 6
   },
   {
     "type": "text",
@@ -391,7 +428,8 @@
     "height": "16",
     "font": "LucioleItalic",
     "size": "12",
-    "label": "une tolérance de 30 kilomètres au-delà du département est acceptée."
+    "label": "une tolérance de 30 kilomètres au-delà du département est acceptée.",
+    "group": 6
   },
   {
     "type": "checkbox",
@@ -403,10 +441,13 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Activité physique, de plein air, promenade "
+    "label": "Activité physique, de plein air, promenade ",
+    "group": 7,
+    "block": 2.8
   },
   {
     "type": "text",
+    "reason": "sport",
     "page": 1,
     "top": "998",
     "left": "369",
@@ -414,7 +455,9 @@
     "height": "18",
     "font": "LucioleBoldItalic",
     "size": "13",
-    "label": "(dans un rayon de 10 kilomètres autour de votre domicile)"
+    "label": "(dans un rayon de 10 kilomètres autour de votre domicile)",
+    "group": 7,
+    "sameline": true
   },
   {
     "type": "text",
@@ -425,7 +468,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements liés à la promenade, à l’activité physique individuelle, à l’activité de plein air,"
+    "label": "- Déplacements liés à la promenade, à l’activité physique individuelle, à l’activité de plein air,",
+    "group": 7
   },
   {
     "type": "text",
@@ -436,7 +480,8 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "aux besoins des animaux de compagnie."
+    "label": "aux besoins des animaux de compagnie.",
+    "group": 7
   },
   {
     "type": "text",
@@ -447,7 +492,8 @@
     "height": "17",
     "font": "LucioleItalic",
     "size": "13",
-    "label": "Vous ne devez remplir l’attestation pour ce motif que si vous ne pouvez présenter un justificatif de domicile."
+    "label": "Vous ne devez remplir l’attestation pour ce motif que si vous ne pouvez présenter un justificatif de domicile.",
+    "group": 7
   },
   {
     "type": "input",
@@ -459,7 +505,9 @@
     "height": "16",
     "font": "LucioleBold",
     "size": "12",
-    "label": "Fait le"
+    "label": "Fait le",
+    "group": 8,
+    "block": 6
   },
   {
     "type": "input",
@@ -471,6 +519,8 @@
     "height": "16",
     "font": "LucioleBold",
     "size": "12",
-    "label": " à"
+    "label": " à",
+    "group": 8,
+    "sameline" : true
   }
 ]

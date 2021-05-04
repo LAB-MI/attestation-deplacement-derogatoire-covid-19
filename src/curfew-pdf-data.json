@@ -30,8 +30,9 @@
     "height": "12",
     "font": "Luciole",
     "size": "9",
-    "label": "En application de l’article 4 du décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales"
-  },
+    "label": "En application de l’article 4 du décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales",
+    "block": 2
+    },
   {
     "type": "text",
     "page": 1,
@@ -53,7 +54,8 @@
     "height": "16",
     "font": "Luciole",
     "size": "12",
-    "label": "Nom et prénom :"
+    "label": "Nom et prénom :",
+    "block": 3
   },
   {
     "type": "input",
@@ -88,9 +90,9 @@
     "height": "22",
     "font": "LucioleBold",
     "size": "16",
-    "label": "Je me déplace entre 19h et 6h pour l’une des raisons suivantes :"
+    "label": "Je me déplace entre 19h et 6h pour l’une des raisons suivantes :",
+    "block": 3
   },
-
   {
     "type": "checkbox",
     "reason": "travail",
@@ -101,7 +103,8 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Activité professionnelle, enseignement et formation, mission d’intérêt général"
+    "label": "Activité professionnelle, enseignement et formation, mission d’intérêt général",
+    "block": 2.8
   },
   {
     "type": "text",
@@ -128,17 +131,6 @@
   {
     "type": "text",
     "page": 1,
-    "top": "436",
-    "left": "68",
-    "width": "622",
-    "height": "18",
-    "font": "Luciole",
-    "size": "13",
-    "label": "- Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle."
-  },
-  {
-    "type": "text",
-    "page": 1,
     "top": "456",
     "left": "68",
     "width": "606",
@@ -157,7 +149,8 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Santé (consultations et soins)"
+    "label": "Santé (consultations et soins)",
+    "block": 2.8
   },
   {
     "type": "text",
@@ -191,7 +184,8 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Motif familial impérieux, assistance aux personnes vulnérables, garde d’enfants, situation de handicap"
+    "label": "Motif familial impérieux, assistance aux personnes vulnérables, garde d’enfants, situation de handicap",
+    "block": 2.8
   },
   {
     "type": "text",
@@ -236,7 +230,8 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Convocation judiciaire ou administrative, démarches ne pouvant être menées à distance"
+    "label": "Convocation judiciaire ou administrative, démarches ne pouvant être menées à distance",
+    "block": 2.8
   },
   {
     "type": "text",
@@ -247,7 +242,7 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements pour répondre à une convocation judiciaire ou administrative, pour se rendre dans"
+    "label": "- Déplacements pour répondre à une convocation judiciaire ou administrative ou pour se rendre chez"
   },
   {
     "type": "text",
@@ -258,18 +253,31 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "un service public ou chez un professionnel du droit, pour un acte ou une démarche qui ne peut être "
+    "label": "un professionnel du droit pour un acte ou une démarche qui ne peut être réalisé à distance."
+  },
+  {
+    "type": "checkbox",
+    "reason": "transit",
+    "page": 1,
+    "top": "768",
+    "left": "68",
+    "width": "266",
+    "height": "18",
+    "font": "LucioleBold",
+    "size": "13",
+    "label": "Déplacements liés à des transferts ou transits depuis des gares ou aéroports dans le cadre",
+    "block": 2.8
   },
   {
     "type": "text",
     "page": 1,
-    "top": "729",
+    "top": "768",
     "left": "68",
-    "width": "115",
+    "width": "266",
     "height": "18",
-    "font": "Luciole",
+    "font": "LucioleBold",
     "size": "13",
-    "label": "réalisé à distance."
+    "label": "de déplacements de longue distance"
   },
   {
     "type": "checkbox",
@@ -281,7 +289,8 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Animaux de compagnie, le soir et la nuit."
+    "label": "Animaux de compagnie",
+    "block": 2.8
   },
   {
     "type": "text",
@@ -292,18 +301,7 @@
     "height": "18",
     "font": "Luciole",
     "size": "13",
-    "label": "- Déplacements brefs pour les besoins des animaux de compagnie (dans un rayon de 1 kilomètre"
-  },
-  {
-    "type": "text",
-    "page": 1,
-    "top": "807",
-    "left": "68",
-    "width": "132",
-    "height": "18",
-    "font": "Luciole",
-    "size": "13",
-    "label": "autour du domicile)."
+    "label": "- Déplacements brefs pour les besoins des animaux de compagnie (dans un rayon de 1 kilomètre autour du domicile)."
   },
   {
     "type": "input",
@@ -315,7 +313,8 @@
     "height": "16",
     "font": "LucioleBold",
     "size": "12",
-    "label": "Fait le"
+    "label": "Fait le",
+    "block": 4
   },
   {
     "type": "input",
@@ -327,6 +326,7 @@
     "height": "16",
     "font": "LucioleBold",
     "size": "12",
-    "label": " à"
+    "label": " à",
+    "sameline": true
   }
 ]

@@ -1,4 +1,11 @@
 # Changelog
+
+## [2.6.0]
+
+- Nouvelles dispositions applicables au 3 mai 2021
+- Désactivation des onglets / motifs couvre-feu uniquement
+- Positionnement vertical sur le PDF calculé
+
 ## [2.5.3]
 
 - Correction warning console
