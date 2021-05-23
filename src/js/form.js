@@ -113,7 +113,7 @@ const createReasonFieldset = (reasonsData, sanitaryContextData) => {
 
   const legendAttrs = {
     className: 'legend titre-3',
-    innerHTML: 'Je me déplace entre 19h00 et 06h00 pour l\'une des raisons suivantes :',
+    innerHTML: 'Je me déplace entre 21h00 et 06h00 pour l\'une des raisons suivantes :',
   }
   const legend = createElement('p', legendAttrs)
 
@@ -138,7 +138,7 @@ const createReasonFieldsetQuarantine = (reasonsData) => {
 
   const legendAttrs = {
     className: 'legend titre-3',
-    innerHTML: 'Je me déplace entre 06h00 et 19h00 pour l\'une des raisons suivantes :',
+    innerHTML: 'Je me déplace entre 06h00 et 21h00 pour l\'une des raisons suivantes :',
   }
   const legend = createElement('p', legendAttrs)
 

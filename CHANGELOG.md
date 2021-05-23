@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.7.0]
+
+- Nouvelles dispositions applicables au 19 mai 2021
+
 ## [2.6.0]
 
 - Nouvelles dispositions applicables au 3 mai 2021
@@ -23,7 +27,7 @@
 
 - Modifications liées aux annonces gouvernementales du 31/03/2021
 - Génération complète du PDF par l'application à partir d'un fichier de configuration JSON
-- Amélioration de l'accessibilité : utilisation de la police LUCIOLE (https://www.luciole-vision.com/) conçue spécifiquement pour les personnes malvoyantes
+- Amélioration de l'accessibilité : utilisation de la police LUCIOLE (<https://www.luciole-vision.com/>) conçue spécifiquement pour les personnes malvoyantes
 
 ## [2.4.1]
 
