@@ -1,4 +1,11 @@
 # Changelog
+## [2.8.1]
+
+- Mise à jour du décret n°2021-699 du 1er juin 2021
+
+## [2.8.0]
+
+- Nouvelles dispositions applicables au 9 juin 2021
 
 ## [2.7.0]
 

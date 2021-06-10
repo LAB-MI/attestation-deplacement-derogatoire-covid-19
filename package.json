@@ -1,6 +1,6 @@
 {
   "name": "attestation-derogatoire-de-deplacement",
-  "version": "2.7.0",
+  "version": "2.8.1",
   "description": "Générateur d'attestation de déplacement dérogatoire'",
   "main": "certificate.js",
   "scripts": {
