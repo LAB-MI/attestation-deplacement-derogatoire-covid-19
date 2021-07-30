@@ -19,34 +19,14 @@
     "height": "24",
     "font": "Luciole",
     "size": "18",
-    "label": "Valable en France métropolitaine (hors Outre-mer)"
-  },
-  {
-    "type": "text",
-    "page": 1,
-    "top": "195",
-    "left": "230",
-    "width": "451",
-    "height": "12",
-    "font": "Luciole",
-    "size": "9",
-    "label": "En application de l'article 4 du décret n°2021-699 du 1er juin 2021 prescrivant les mesures générales",
-    "block": 2
-    },
-  {
-    "type": "text",
-    "page": 1,
-    "top": "207",
-    "left": "325",
-    "width": "408",
-    "height": "12",
-    "font": "Luciole",
-    "size": "9",
-    "label": "nécessaires à la gestion de la sortie de crise sanitaire."
+    "label": "durant les horaires du couvre-feu (arrêté préfectoral)."
   },
   {
     "type": "input",
-    "inputs": ["firstname", "lastname"],
+    "inputs": [
+      "firstname",
+      "lastname"
+    ],
     "page": 1,
     "top": "246",
     "left": "63",
@@ -59,7 +39,9 @@
   },
   {
     "type": "input",
-    "inputs": ["birthday"],
+    "inputs": [
+      "birthday"
+    ],
     "page": 1,
     "top": "261",
     "left": "63",
@@ -71,7 +53,11 @@
   },
   {
     "type": "input",
-    "inputs": ["address", "zipcode", "city"],
+    "inputs": [
+      "address",
+      "zipcode",
+      "city"
+    ],
     "page": 1,
     "top": "275",
     "left": "63",
@@ -90,7 +76,7 @@
     "height": "22",
     "font": "LucioleBold",
     "size": "16",
-    "label": "Je me déplace entre 23h et 6h pour l’une des raisons suivantes :",
+    "label": "Je me déplace pour l’une des raisons suivantes :",
     "block": 3
   },
   {
@@ -305,7 +291,9 @@
   },
   {
     "type": "input",
-    "inputs": ["datesortie"],
+    "inputs": [
+      "datesortie"
+    ],
     "page": 1,
     "top": "1160",
     "left": "50",
@@ -318,7 +306,9 @@
   },
   {
     "type": "input",
-    "inputs": ["heuresortie"],
+    "inputs": [
+      "heuresortie"
+    ],
     "page": 1,
     "top": "1160",
     "left": "174",

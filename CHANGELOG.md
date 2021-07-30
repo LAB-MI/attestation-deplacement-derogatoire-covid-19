@@ -1,4 +1,12 @@
 # Changelog
+
+## [2.9.0]
+
+- Version générique pour l'application des arrêtés préfectoraux en vue de freiner l'épidémie
+- Réactivation des onglets
+- Adaptation des motifs
+- Ajout d'un lien vers les sites internet des préfectures
+  
 ## [2.8.1]
 
 - Mise à jour du décret n°2021-699 du 1er juin 2021

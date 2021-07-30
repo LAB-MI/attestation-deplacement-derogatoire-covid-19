@@ -4,7 +4,7 @@ import { $, $$, downloadBlob } from './dom-utils'
 import { addSlash, getFormattedDate } from './util'
 import { generatePdf } from './pdf-util'
 import SecureLS from 'secure-ls'
-const context = 'curfew'
+let context = 'curfew'
 const secureLS = new SecureLS({ encodingType: 'aes' })
 const clearDataSnackbar = $('#snackbar-cleardata')
 const storeDataInput = $('#field-storedata')
@@ -211,12 +211,20 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldsetsWrapper,
   const curfewFieldset = $('#curfew-reason-fieldset')
   const quarantineFieldset = $('#quarantine-reason-fieldset')
 
-  contextWrapper.classList.remove('context-wrapper-error')
-  reasonFieldsetsWrapper.classList.toggle('hidden', false)
-
-  curfewFieldset.classList.toggle('in-quarantine', false)
-  curfewFieldset.classList.toggle('targeted', true)
-  quarantineFieldset.classList.toggle('targeted', false)
+  $$('.context-button').map(anchor => anchor.addEventListener('click', (event) => {
+    contextWrapper.classList.remove('context-wrapper-error')
+    reasonFieldsetsWrapper.classList.toggle('hidden', false)
+    if (event.target.className.includes('curfew-button')) {
+      context = 'curfew'
+      curfewFieldset.classList.toggle('targeted', true)
+      quarantineFieldset.classList.toggle('targeted', false)
+    }
+    if (event.target.className.includes('quarantine-button')) {
+      context = 'quarantine'
+      curfewFieldset.classList.toggle('targeted', false)
+      quarantineFieldset.classList.toggle('targeted', true)
+    }
+  }))
 }
 
 export function prepareForm () {

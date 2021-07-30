@@ -113,7 +113,7 @@ const createReasonFieldset = (reasonsData, sanitaryContextData) => {
 
   const legendAttrs = {
     className: 'legend titre-3',
-    innerHTML: 'Je me déplace entre 23h00 et 06h00 pour l\'une des raisons suivantes :',
+    innerHTML: 'Je me déplace en période de couvre-feu pour l\'une des raisons suivantes :',
   }
   const legend = createElement('p', legendAttrs)
 
@@ -133,16 +133,16 @@ const createReasonFieldsetQuarantine = (reasonsData) => {
   const appendToFieldset = appendTo(fieldset)
   const reasonsFields = reasonsData.items.map(createReasonField(reasonsData.key))
 
-  const footnoteAttrs = { id: 'footnote2', className: 'footnote', innerHTML: ' [1] Pour les personnes résidant aux frontières d’un département, une tolérance de 30 kilomètres au-delà du département est acceptée. ' }
-  const footnote = createElement('p', footnoteAttrs)
+  // const footnoteAttrs = { id: 'footnote2', className: 'footnote', innerHTML: ' [1] Pour les personnes résidant aux frontières d’un département, une tolérance de 30 kilomètres au-delà du département est acceptée. ' }
+  // const footnote = createElement('p', footnoteAttrs)
 
   const legendAttrs = {
     className: 'legend titre-3',
-    innerHTML: 'Je me déplace entre 06h00 et 23h00 pour l\'une des raisons suivantes :',
+    innerHTML: 'Je me déplace en journée pour l\'une des raisons suivantes :',
   }
   const legend = createElement('p', legendAttrs)
 
-  appendToFieldset([legend, ...reasonsFields, footnote])
+  appendToFieldset([legend, ...reasonsFields])
   // Créer un form-checkbox par motif
   return fieldset
 }
@@ -182,10 +182,19 @@ export function createForm () {
 
   const reasonFieldsetCurfew = createReasonFieldset(reasonsDataCurfew)
   const reasonFieldsetQuarantine = createReasonFieldsetQuarantine(reasonsDataQuarantine)
+  const curfewButton = createElement('button', { type: 'button', className: 'curfew-button  context-button  btn', innerHTML: '<i class="fa fa-moon inline-block mr-1"></i> Couvre-feu' })
+  const quarantineButton = createElement('button', { type: 'button', className: 'quarantine-button  context-button  btn', innerHTML: '<i class="fa fa-sun inline-block mr-1"></i> Journée' })
+  const buttonWrapper = createElement('div', { className: 'button-wrapper' })
+  buttonWrapper.appendChild(curfewButton)
+  buttonWrapper.appendChild(quarantineButton)
   const contextTitle = createElement('p', { className: 'context-title' })
   const contextTitleText = document.createTextNode('Choisissez un contexte')
   contextTitle.appendChild(contextTitleText)
+  const contextSubtitle = createElement('p', { className: 'context-subtitle' })
   const contextWrapper = createElement('div', { className: 'context-wrapper' })
+  contextWrapper.appendChild(contextTitle)
+  contextWrapper.appendChild(contextSubtitle)
+  contextWrapper.appendChild(buttonWrapper)
   const reasonFielsetWrapper = createElement('div', { className: 'fieldset-wrapper  hidden' })
 
   reasonFielsetWrapper.appendChild(reasonFieldsetCurfew)

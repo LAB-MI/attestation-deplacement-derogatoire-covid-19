@@ -153,11 +153,11 @@ export async function generatePdf (profile, reasons, context) {
 
   const qrImage = await pdfDoc.embedPng(generatedQR)
   const pageX0 = pdfDoc.getPages()[0]
-  pageX0.drawText(qrTitle1 + '\n' + qrTitle2, { x: 470, y, size: 6, font, lineHeight: 10, color: rgb(1, 1, 1) })
+  pageX0.drawText(qrTitle1 + '\n' + qrTitle2, { x: 470, y: 121, size: 6, font, lineHeight: 10, color: rgb(1, 1, 1) })
 
   pageX0.drawImage(qrImage, {
     x: pageX0.getWidth() - 107,
-    y: y - 105,
+    y: 21,
     width: 82,
     height: 82,
   })

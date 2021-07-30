@@ -19,34 +19,14 @@
     "height": "24",
     "font": "Luciole",
     "size": "18",
-    "label": "Valable en France métropolitaine (hors Outre-mer)"
-  },
-  {
-    "type": "text",
-    "page": 1,
-    "top": "195",
-    "left": "230",
-    "width": "451",
-    "height": "12",
-    "font": "Luciole",
-    "size": "9",
-    "label": "En application de l'article 4 du décret n°2021-699 du 1er juin 2021 prescrivant les mesures générales",
-    "block": 2
-  },
-  {
-    "type": "text",
-    "page": 1,
-    "top": "207",
-    "left": "325",
-    "width": "408",
-    "height": "12",
-    "font": "Luciole",
-    "size": "9",
-    "label": "nécessaires à la gestion de la sortie de crise sanitaire."
+    "label": "en dehors des horaires du couvre-feu (arrêté préfectoral)."
   },
   {
     "type": "input",
-    "inputs": ["firstname", "lastname"],
+    "inputs": [
+      "firstname",
+      "lastname"
+    ],
     "page": 1,
     "top": "246",
     "left": "63",
@@ -59,7 +39,9 @@
   },
   {
     "type": "input",
-    "inputs": ["birthday"],
+    "inputs": [
+      "birthday"
+    ],
     "page": 1,
     "top": "261",
     "left": "63",
@@ -71,7 +53,11 @@
   },
   {
     "type": "input",
-    "inputs": ["address", "zipcode", "city"],
+    "inputs": [
+      "address",
+      "zipcode",
+      "city"
+    ],
     "page": 1,
     "top": "275",
     "left": "63",
@@ -90,7 +76,7 @@
     "height": "22",
     "font": "LucioleBold",
     "size": "16",
-    "label": "Je me déplace entre 6h et 23h pour l’une des raisons suivantes :",
+    "label": "Je me déplace pour l’une des raisons suivantes :",
     "block": 3
   },
   {
@@ -345,6 +331,30 @@
   },
   {
     "type": "checkbox",
+    "reason": "transit",
+    "page": 1,
+    "top": "768",
+    "left": "68",
+    "width": "266",
+    "height": "18",
+    "font": "LucioleBold",
+    "size": "13",
+    "label": "Déplacements liés à des transferts ou transits depuis des gares ou aéroports dans le cadre",
+    "block": 2.8
+  },
+  {
+    "type": "text",
+    "page": 1,
+    "top": "768",
+    "left": "68",
+    "width": "266",
+    "height": "18",
+    "font": "LucioleBold",
+    "size": "13",
+    "label": "de déplacements de longue distance"
+  },
+  {
+    "type": "checkbox",
     "reason": "achats_culte_culturel",
     "page": 1,
     "top": "865",
@@ -356,20 +366,6 @@
     "label": "Achats, établissements culturels ou lieux de culte ",
     "group": 6,
     "block": 2.8
-  },
-  {
-    "type": "text",
-    "reason": "achats_culte_culturel",
-    "page": 1,
-    "top": "865",
-    "left": "417",
-    "width": "205",
-    "height": "18",
-    "font": "LucioleBoldItalic",
-    "size": "13",
-    "label": "(au sein de mon département*)",
-    "group": 6,
-    "sameline": true
   },
   {
     "type": "text",
@@ -408,30 +404,6 @@
     "group": 6
   },
   {
-    "type": "text",
-    "page": 1,
-    "top": "944",
-    "left": "68",
-    "width": "361",
-    "height": "16",
-    "font": "LucioleItalic",
-    "size": "12",
-    "label": "Note : Pour les personnes résidant aux frontières d’un département,",
-    "group": 6
-  },
-  {
-    "type": "text",
-    "page": 1,
-    "top": "959",
-    "left": "68",
-    "width": "404",
-    "height": "16",
-    "font": "LucioleItalic",
-    "size": "12",
-    "label": "une tolérance de 30 kilomètres au-delà du département est acceptée.",
-    "group": 6
-  },
-  {
     "type": "checkbox",
     "reason": "sport",
     "page": 1,
@@ -441,7 +413,7 @@
     "height": "18",
     "font": "LucioleBold",
     "size": "13",
-    "label": "Activité physique, de plein air, promenade ",
+    "label": "Activité physique, de plein air, promenade autour de votre domicile",
     "group": 7,
     "block": 2.8
   },
@@ -450,14 +422,13 @@
     "reason": "sport",
     "page": 1,
     "top": "998",
-    "left": "369",
+    "left": "68",
     "width": "356",
     "height": "18",
     "font": "LucioleBoldItalic",
     "size": "13",
-    "label": "(dans un rayon de 10 kilomètres autour de votre domicile)",
+    "label": "(dans un rayon défini par l'arrêté préfectoral)",
     "group": 7,
-    "sameline": true
   },
   {
     "type": "text",
@@ -484,20 +455,10 @@
     "group": 7
   },
   {
-    "type": "text",
-    "page": 1,
-    "top": "1056",
-    "left": "68",
-    "width": "682",
-    "height": "17",
-    "font": "LucioleItalic",
-    "size": "13",
-    "label": "Vous ne devez remplir l’attestation pour ce motif que si vous ne pouvez présenter un justificatif de domicile.",
-    "group": 7
-  },
-  {
     "type": "input",
-    "inputs": ["datesortie"],
+    "inputs": [
+      "datesortie"
+    ],
     "page": 1,
     "top": "1160",
     "left": "50",
@@ -511,7 +472,9 @@
   },
   {
     "type": "input",
-    "inputs": ["heuresortie"],
+    "inputs": [
+      "heuresortie"
+    ],
     "page": 1,
     "top": "1160",
     "left": "174",
@@ -521,6 +484,6 @@
     "size": "12",
     "label": " à",
     "group": 8,
-    "sameline" : true
+    "sameline": true
   }
 ]
