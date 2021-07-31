@@ -428,7 +428,7 @@
     "font": "LucioleBoldItalic",
     "size": "13",
     "label": "(dans un rayon défini par l'arrêté préfectoral)",
-    "group": 7,
+    "group": 7
   },
   {
     "type": "text",
