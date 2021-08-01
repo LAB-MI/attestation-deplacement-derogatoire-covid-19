@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.9.1]
+
+- Suppression d'une virgule en trop dans quarantine.json (proposé par @Bbillyben)
+
 ## [2.9.0]
 
 - Version générique pour l'application des arrêtés préfectoraux en vue de freiner l'épidémie
