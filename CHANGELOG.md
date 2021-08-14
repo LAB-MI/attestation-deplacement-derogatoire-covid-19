@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.9.2]
+
+- Correction du qr-code pour qu'il ne contienne que les motifs liés au contexte sélectionné
+
 ## [2.9.1]
 
 - Suppression d'une virgule en trop dans quarantine.json (proposé par @Bbillyben)

@@ -80,8 +80,9 @@ function createReasonField (context) {
     const appendToReason = appendTo(formReason)
 
     const id = `checkbox-${context}-${reasonData.code}`
+    const className = `form-check-input ${context}`
     const inputReasonAttrs = {
-      className: 'form-check-input',
+      className,
       type: 'checkbox',
       id,
       name: 'field-reason',

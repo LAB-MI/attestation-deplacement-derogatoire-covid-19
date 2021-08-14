@@ -122,8 +122,9 @@ export function getProfile (formInputs) {
   return fields
 }
 
-export function getReasons (reasonInputs) {
+export function getReasons (reasonInputs, context) {
   const reasons = reasonInputs
+    .filter(input => input.className.split(' ').includes(context))
     .filter(input => input.checked)
     .map(input => input.value).join(', ')
   return reasons
@@ -183,7 +184,7 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldsetsWrapper,
       contextWrapper.classList.add('context-wrapper-error')
     }
 
-    const reasons = getReasons(reasonInputs)
+    const reasons = getReasons(reasonInputs, context)
     if (!reasons) {
       reasonFieldsetsWrapper.classList.add('fieldset-error')
       reasonAlerts.map(reasonAlert => reasonAlert.classList.remove('hidden'))
