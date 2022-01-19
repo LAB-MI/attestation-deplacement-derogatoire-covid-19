@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.9.2]
+
+- Correction du qr-code pour qu'il ne contienne que les motifs liés au contexte sélectionné
+
+## [2.9.1]
+
+- Suppression d'une virgule en trop dans quarantine.json (proposé par @Bbillyben)
+
+## [2.9.0]
+
+- Version générique pour l'application des arrêtés préfectoraux en vue de freiner l'épidémie
+- Réactivation des onglets
+- Adaptation des motifs
+- Ajout d'un lien vers les sites internet des préfectures
+  
+## [2.8.1]
+
+- Mise à jour du décret n°2021-699 du 1er juin 2021
+
+## [2.8.0]
+
+- Nouvelles dispositions applicables au 9 juin 2021
+
 ## [2.7.0]
 
 - Nouvelles dispositions applicables au 19 mai 2021
